@@ -1,7 +1,4 @@
 # Site settings
-host: 0.0.0.0
-port: 9003
-
 title: Your awesome title
 email: ypiruzyan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -15,3 +12,20 @@ github_username:  yeghishe
 
 # Build settings
 markdown: kramdown
+
+sass:
+  style: :compressed
+
+timezone: America/Los_Angeles
+host: 0.0.0.0
+port: 9003
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      author: "Yeghishe"
+
