@@ -2,7 +2,7 @@
 title: Yeghishe Piruzyan
 email: ypiruzyan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a software guy based in Los Angeles. Blogging about interesting technology and challanges I face that other may find helpful.
+  I'm a software engineer based in Los Angeles. Blogging about interesting technology and challanges I face that other may find helpful.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: ypiruzyan
@@ -13,6 +13,7 @@ linkedin_username: ypiruzyan
 # Build settings
 markdown: kramdown
 
+paginate: 10
 sass:
   style: :compressed
 

@@ -58,3 +58,7 @@
     border-radius: 15px;
   }
 }
+
+.pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
+  cursor: default;
+}
