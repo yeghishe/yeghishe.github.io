@@ -1,0 +1,60 @@
+.site-nav, .site-title {
+  float: none;
+}
+
+.site-nav {
+  z-index: 100;
+  line-height: $base-line-height;
+
+  .menu-icon {
+    height: 36px;
+  }
+
+  .page-link {
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .25em;
+    background-color: #337ab7;
+
+    @include media-query($on-palm) {
+      background-color: $background-color;
+      color: $text-color;
+      font-weight: normal;
+    }
+   }
+}
+
+.site-title {
+  width: 100%;
+  display: block;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.sidebar {
+  hr {
+    margin: 10px 0;
+
+    @include media-query($on-palm) {
+      display: none;
+    }
+  }
+}
+
+.content {
+  background-color: #f2f2f2;
+  padding: 4% 5%;
+
+  .home, .post {
+    padding: 2% 3%;
+    background-color: #fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+  }
+}
