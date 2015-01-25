@@ -3,32 +3,6 @@ layout: default
 ---
 
 <div class="home">
-
-  <ul class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
-
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path }}">Previous</a></li>
-    {% else %}
-      <li class="disabled"><a href="#">Previous</a></li>
-    {% endif %}
-    <li><span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span></li>
-    {% if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path }}">Next</a></li>
-    {% else %}
-      <li class="disabled"><a href="#">Next</a></li>
-    {% endif %}
-  </ul>
+  {% include post_list.html posts=paginator.posts %}
+  {% include pager.html paginator=paginator %}
 </div>

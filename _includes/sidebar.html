@@ -25,7 +25,8 @@
     {% for tag in site.tags %}
       {% assign t = tag | first %}
       {% assign posts = tag | last %}
-      <a class="page-link" href="#">{{t | downcase | replace:" ","-" }}</a>
+      {% capture tag_url %}{{ "/tags/" }}{{ t | slugify }}{% endcapture %}
+      <a class="page-link" href="{{ tag_url  | prepend: site.baseurl }}">{{t | downcase | replace:" ","-" }}</a>
     {% endfor %}
   </div>
 </nav>
