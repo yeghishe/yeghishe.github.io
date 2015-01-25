@@ -2,7 +2,7 @@
 title: Yeghishe Piruzyan
 email: ypiruzyan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a software engineer based in Los Angeles. Blogging about interesting technology and challanges I face that other may find helpful.
+  I'm a software engineer based in Los Angeles. I'll be blogging about interesting technologies and challanges I face that other may find helpful.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://6e04d13d.ngrok.com" # the base hostname & protocol for your site
 twitter_username: ypiruzyan
@@ -37,5 +37,5 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       layout: "post"
-      author: "Yeghishe"
+      author: "Yeghishe Piruzyan"
 
