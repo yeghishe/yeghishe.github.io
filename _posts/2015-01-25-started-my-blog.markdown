@@ -60,4 +60,8 @@ case other find it helpful also.
 
 {% gist yeghishe/c4bf1e9c45092d8c8846 %}
 
+Uploading to github is also easy, just create a repo in github called
+```<your user name>.github.io``` push your code to *master* branch or that
+repo, just like any project you're working on.
+
 Happy blogging folks,
