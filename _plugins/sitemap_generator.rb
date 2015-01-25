@@ -263,7 +263,6 @@ module Jekyll
     #
     # Returns boolean
     def excluded?(site, name)
-      puts name
       @config['exclude'].include? name
     end
 
