@@ -3,20 +3,20 @@ tags: misc
 ---
 
 As most technology guys I'm also working on different technologies, playing
-with new stuff, facing some challanges that I end up solving.
+with new stuff, facing some challenges that I end up solving.
 Always wanted to blog about what I'm working on since if it interests me then
 others can also find it helpful or interesting.
 
-So I finally dicided to create one. There are many blog platfoms out there.
+So I finally decided to create one. There are many blog platforms out there.
 I'm not really into CMS, I would much rather open Vim, write some markdown,
 publish it somewhere and call it a blog post. Seemed like what I want is github
 pages with some basic blogging features. And I found exactly what I was looking
 for [Jekyll](http://jekyllrb.com/){:target="_blank"}.
 Yep Markdown + github pages = AWESOME. It also has plugins, I'll give it a try.
 
-It's ruby based so I had to install ruby in my vagrant vm. Basicly what it
+It's ruby based so I had to install ruby in my vagrant vm. Basically what it
 does it parses liquid and markdown files and generates static site for you.
-You can view your posts in brower before publishing. Another nice thing I like
+You can view your posts in browser before publishing. Another nice thing I like
 about it is that it watches files when you change something you don't need to
 restart the server (although I noticed that it doesn't pick up changes to
 *_config* file) just refresh the browser (maybe I'll also explore adding
@@ -37,7 +37,7 @@ implementation. Create folder structure ```assets/posts/<post name>``` to store
 images and reference an image in markdown by writing
 ```![<alt text>]({{"{% asset_path <image_name> "}}%})```. Elegant!
 
-Ok next plugin, sitemap. Jekyll is already nice enough to generate RSS why not
+OK next plugin, sitemap. Jekyll is already nice enough to generate RSS why not
 try to get *sitemap.xml* generate also. For that I used
 [Sitemap.xml Generator](https://github.com/kinnetica/jekyll-plugins){:target="_blank"}
 created by *Michael Levin*.
@@ -46,22 +46,27 @@ And here free lunch ended for me. Turns out not everything is supper simple with
 Jekyll. I wanted to have tagging feature in my blog also since most likely I'll
 be writing about different technologies and it would make sense to provide ease
 filters for people to use and I already designed navigation based on tags.
-Jekyll has really easy way to assosiate posts to categories and tags and to
+Jekyll has really easy way to associate posts to categories and tags and to
 get tags and categories you used in your posts also very easy. But what's not
 easy to do is to have tags page where you go and you see all the posts with
 that tag. I was like ok, there must be a plugin to do it already, I tried
-couple and got some erros, maybe it's because I'm running the latest version of
+couple and got some errors, maybe it's because I'm running the latest version of
 Jekyll or maybe I'm using ruby 2.2.0 that's why and those scripts aren't up to
 date. Decided to go more advanced and write my first Jekyll plugin. Why not,
 they have great documentation and it's been a while since I wrote ruby, why not
-get my hands dirty and I write a plugin in ruby. Basicly I took the example that
+get my hands dirty and I write a plugin in ruby. Basically I took the example that
 was for categories and changed it to work for tags. Decided to share it here in
 case other find it helpful also.
 
 {% gist yeghishe/c4bf1e9c45092d8c8846 %}
 
 Uploading to github is also easy, just create a repo in github called
-```<your user name>.github.io``` push your code to *master* branch or that
-repo, just like any project you're working on.
+```<your user name>.github.io``` push your code to *master* branch of that
+repo, just like any project you're working on. Unfortunately if you need to
+get plugins working this approach won't do it since github runs *Jekyll* in safe
+mode. To get plugins working one thing you can do you can store the code in one
+branch, build it locally and push the output that's in *_site* directory to
+*master*. If you're building a project site and not user/organization site you
+can have *Jekyll* code in *master* and output in *gh-pages* branch.
 
 Happy blogging folks,
