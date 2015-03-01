@@ -1,5 +1,5 @@
 ---
-tags: sbt, scala
+tags: sbt scala
 ---
 
 Sbt is really awesome and there are plugins that make it even better. I thought

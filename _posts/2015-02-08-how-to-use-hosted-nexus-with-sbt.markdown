@@ -1,5 +1,5 @@
 ---
-tags: sbt, scala
+tags: sbt scala
 ---
 
 If you work in an organization or doing your personal project sooner or latter
