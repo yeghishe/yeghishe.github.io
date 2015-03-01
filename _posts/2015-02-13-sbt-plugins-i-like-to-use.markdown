@@ -25,7 +25,7 @@ integrate it with Jenkins. I didn't find a Jenkins plugin for this to show and
 graph the violations nor I found a way to make it generate a common report file
 like findbug report that Jenkins can pick up.
 
-## Find buys and violations
+## Find bugs and violations
 
 Another plugin I use for static code analysis is *scalastyle-sbt-plugin* which
 checks to make sure you're following standard conventions. You can customize
