@@ -1,5 +1,5 @@
 ---
-categories: scala scalaz
+tags: scala scalaz
 title: Methods Scalaz Adds To Standard Classes - Integer, String and Boolean
 ---
 

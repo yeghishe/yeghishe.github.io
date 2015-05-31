@@ -1,5 +1,5 @@
 ---
-categories: scala akka
+tags: scala akka
 ---
 
 Recently I needed to cache some lightweight data into actor's local memory to
@@ -63,7 +63,7 @@ messages. Let's say credits is really important and we don't want to cache it
 ever but we do want to cache user data. The normal way to send that data back
 would be to do this:
 
-    dataActorRef.ask(DataActor.GetUserData(userId)).pipeTo(sender())
+    dataActorRef.ask(DataActor.GetUserData(userId)).pipeTo(self)(sender())
 
 For caching we're doing this:
 

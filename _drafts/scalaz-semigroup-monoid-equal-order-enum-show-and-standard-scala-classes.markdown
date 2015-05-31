@@ -1,6 +1,6 @@
 ---
-categories: scala scalaz
-title: Semigroup, Monoid, Equal, Order, Enum, Show and Standard Scala Classes
+tags: scala scalaz
+title: Scalaz Semigroup, Monoid, Equal, Order, Enum, Show and Standard Scala Classes
 ---
 
 Scalaz has so many abstractions and higher kinds that model lot of
@@ -11,7 +11,7 @@ in standard scala library. What the anomalies of basic types are in standard
 scala library, what are the comment things between them that can be made
 generic, how to use scalaz with standard classes defined in scala library.
 
-## Semi group
+## [Semi group](#semigroup)
 Semi group brings append operation and append
 should be associative. We see in standard library append operation is
 everywhere, numeric types, strings, lists, etc, all have a way to add one
@@ -22,7 +22,7 @@ semi group then we can append a to by by doing *a ⊹ b*. Cleans things up littl
 bit for sure, we don't say if a and b are strings it's *+*, is a and be are
 lists it's *++*.
 
-## Monoid
+## [Monoid](#monoid)
 Next comes Monoid, Monoid is a semi group and it also has zero element.
 There is left and right identity with zero element, meaning:
 
@@ -46,7 +46,7 @@ as monoid. Just be careful what instance to bring in scope, for example
 integer is a monoid over 0 and + operation and also over 1 and * operation,
 boolean is a monoid for conjunction and disjunction.
 
-## Equal
+## [Equal](#equal)
 Equal is another one that we say most often in scala library but equal on
 it's own is has lot for variations starting from java's *==* and
 equal gotchas, scala's *==* not being type safe and so many
@@ -76,7 +76,7 @@ Defining equal method well automatically get not equal (it's same as !equal),
 scalaz defines *===, ≟* as synonyms for equal equal, and *=/=* and *≠* for
 not equal.
 
-## Order
+## [Order](#order)
 *Order[F]* extends *Equal[F]* and brings in order function:
 
     def order(x: F, y: F): Ordering 
@@ -94,7 +94,7 @@ class:
 * max
 * cmp, ?\|? and order
 
-## Enum
+## [Enum](#enum)
 Another one that's useful is *Enum[F]* which extends *Order[F]* and
 defines *succ, pred* to get successor and predecessor of value *f* of type *F*.
 *succn, predn* to get nth successor and predecessor of value *f* of type *F*.
@@ -115,7 +115,7 @@ synonyms and derived functions:
 * \|-->, fromStepToL
 
 
-## Show
+## [Show](#show)
 Next abstraction I want to cover from scalaz is *Show[F]*. *Show[F]* defines
 *shows* method which having *f* instance of *F* will return it's string
 representation. Scalaz defines *print* and *println* derived functions to

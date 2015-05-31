@@ -1,6 +1,6 @@
 ---
 title:  "Practical scalaz"
-categories: scala scalaz
+tags: scala scalaz
 ---
 
 Scala is an object oriented language with functional aspects. Some people
