@@ -22,3 +22,15 @@ real world application to do certain things functional way.
 I would be posting series of short posts with code snippets to demonstrate
 certain features in scalaz. I'll put the links to all posts here so it'll
 be easy to find.
+
+* scalaz-semigroup-monoid-equal-order-enum-show-and-standard-scala-classes
+* scalaz-methods-scalaz-adds-to-standard-classes-integer-string-boolean
+* scalaz-functor
+* scalaz-apply
+* scalaz-applicative
+* scalaz-bind
+* scalaz-cobind.markdown
+* scalaz-monad
+* scalaz-comonad
+* scalaz-plus-plusempty-isempty-applicativeplus-monadplus
+* scalaz-foldable

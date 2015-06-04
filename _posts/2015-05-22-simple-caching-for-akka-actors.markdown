@@ -63,15 +63,21 @@ messages. Let's say credits is really important and we don't want to cache it
 ever but we do want to cache user data. The normal way to send that data back
 would be to do this:
 
-    dataActorRef.ask(DataActor.GetUserData(userId)).pipeTo(self)(sender())
+{% highlight scala %}
+  dataActorRef.ask(DataActor.GetUserData(userId)).pipeTo(self)(sender())
+{% endhighlight %}
 
 For caching we're doing this:
 
-    cacheAndRespond(msg, dataActorRef ? DataActor.GetUserData(userId))
+{% highlight scala %}
+  cacheAndRespond(msg, dataActorRef ? DataActor.GetUserData(userId))
+{% endhighlight %}
 
 For just responding without caching:
 
-    respond(dataActorRef ? DataActor.GetUserCredits(userId))
+{% highlight scala %}
+  respond(dataActorRef ? DataActor.GetUserCredits(userId))
+{% endhighlight %}
 
 As you can see it can't get simpler than this, it's actually a shorter syntax.
 
@@ -125,12 +131,14 @@ cache by setting cached duration to zero without changing the code.
 actor can override it if it doesn't want to live with the globally set cache
 duration:
 
-    trait Config {
-      private val config = ConfigFactory.load()
-      val simpleCacheConfig = config.getConfig("scalasnippets.akkasnippets.simplecache")
-      def askTimeout = Duration(simpleCacheConfig.getDuration("ask-timeout", SECONDS), SECONDS)
-      def cacheDuration = Duration(simpleCacheConfig.getDuration("cache-duration", MINUTES), MINUTES)
-    }
+{% highlight scala %}
+  trait Config {
+    private val config = ConfigFactory.load()
+    val simpleCacheConfig = config.getConfig("scalasnippets.akkasnippets.simplecache")
+    def askTimeout = Duration(simpleCacheConfig.getDuration("ask-timeout", SECONDS), SECONDS)
+    def cacheDuration = Duration(simpleCacheConfig.getDuration("cache-duration", MINUTES), MINUTES)
+  }
+{% endhighlight %}
 
 Another small detail that's very important is in *UserActor* that I didn't cover.
 Notice that receive method is defined as
