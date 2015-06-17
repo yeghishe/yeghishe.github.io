@@ -8,6 +8,8 @@
       </h2>
 
       {{ post.excerpt }}
+
+      <a class="read-the-rest" href="{{ post.url | prepend: site.baseurl }}">Read the rest -&gt;</a>
     </li>
   {% endfor %}
 </ul>

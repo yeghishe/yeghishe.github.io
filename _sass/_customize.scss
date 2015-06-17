@@ -57,6 +57,14 @@
     -moz-border-radius: 15px;
     border-radius: 15px;
   }
+
+  .post-list {
+    .read-the-rest {
+      font-size: 80%;
+      float: right;
+      padding: 0 10px 0 0;
+    }
+  }
 }
 
 .pager {
@@ -66,3 +74,4 @@
 .pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
   cursor: default;
 }
+
