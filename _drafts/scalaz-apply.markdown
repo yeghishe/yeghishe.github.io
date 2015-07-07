@@ -3,7 +3,7 @@ title:  "Scalaz Apply"
 tags: scala scalaz
 ---
 
-*Apply* is *Functor* that also apply method.
+*Apply* is *Functor* that also has apply method.
 Scalaz defines *Apply[F[_]]* trait with *ap* abstract method.
 {% highlight scala %}
 def ap[A,B](fa: ⇒ F[A])(f: ⇒ F[A ⇒ B]): F[B]
