@@ -19,8 +19,8 @@ I'll put the links to all posts here so it's easy to navigate.
 
 * [Semigroup, Monoid, Equal, Order, Enum, Show and Standard Scala Classes]({% post_url 2015-07-06-scalaz-semigroup-monoid-equal-order-enum-show-and-standard-scala-classes %})
 * [Methods Scalaz Adds To Standard Classes - Integer, String and Boolean]({% post_url 2015-07-13-scalaz-methods-scalaz-adds-to-standard-classes-integer-string-boolean %})
+* [Scalaz Functor]({% post_url 2015-07-15-scalaz-functor %})
 {% comment %}
-* scalaz-functor
 * scalaz-apply
 * scalaz-applicative
 * scalaz-bind
