@@ -1,5 +1,5 @@
 ---
-tags: nodejs docker devops
+tags: nodejs docker devops coffeescript
 ---
 
 I like to use docker to run my server side apps and my node apps aren't
