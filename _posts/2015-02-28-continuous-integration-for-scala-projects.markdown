@@ -186,7 +186,7 @@ server.
 
 ![artifacts in nexus picture]({% asset_path nexus.png %})
 
-## Visioning
+## Versioning
 
 And since every good commit produces an artifact (or set or artifacts) we should
 talk about versions. We already specify the version in sbt file and when

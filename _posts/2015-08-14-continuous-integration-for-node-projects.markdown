@@ -59,7 +59,7 @@ node, npm and all global packages in Jenkins box, provision it with Chef or
 even better, have a Jenkins docker image. There are few problems with this
 approach though. One is that every time you need a new global package you need to
 re-provision Jenkins instance or re-build the docker image. Other big problem
-is the visioning issue, one project may need one version of node or global packages
+is the versioning issue, one project may need one version of node or global packages
 and another project may need other version, we don't want to be forced to
 upgrade all the project to latest versions in one day. What would be ideal is
 isolated node environments. Luckily Jenkins has NodeJS plugin. What it does it
@@ -170,7 +170,7 @@ In case of server apps artifact can be a docker image job will build and push to
 docker registry. For other type of projects zip file can be good enough, just
 version it and put on S3 or something.
 
-## Visioning
+## Versioning
 
 And since every good commit produces an artifact (in this case npm package is
 the artifact) we should talk about versions. One thing that would be good if
