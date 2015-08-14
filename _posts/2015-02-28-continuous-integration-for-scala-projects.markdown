@@ -1,5 +1,5 @@
 ---
-tags: scala sbt jenkins
+tags: scala sbt jenkins build
 ---
 
 So what is continuous integration, at the very high level it's about hey is
