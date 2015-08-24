@@ -144,7 +144,7 @@ This should be almost same setup even if you prefer to use other clients.
 Again, let's switch to root user, source the variables and generate client certs.
 {% highlight bash %}
 sudo su
-/etc/openvpn/easy-rsa
+cd /etc/openvpn/easy-rsa
 . ./vars
 ./build-key-pass CLIENT NAME
 {% endhighlight %}
