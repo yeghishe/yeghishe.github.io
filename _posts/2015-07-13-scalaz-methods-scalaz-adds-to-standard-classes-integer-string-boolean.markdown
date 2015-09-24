@@ -10,6 +10,8 @@ implicit implementations of those for scala standard classes that once are
 brought into the scope you'll have access to those. In this article I'm gonna
 show those methods in action for *integer*, *string* and *boolean*.
 
+<!--more-->
+
 ## Integer
 {% highlight scala %}
 object OperationsIntSnippets extends App {

@@ -39,6 +39,8 @@ integration is it should be continuous and it's continuous if it runs after
 somebody changes something (or maybe before is a better option?☺ I'll get
 to this later.)
 
+<!--more-->
+
 This should cover what the continuous part is but what about integration,
 what is it actually? I would define it as pipeline of checks that run one
 after another and if one fails the whole thing fails if all pass then

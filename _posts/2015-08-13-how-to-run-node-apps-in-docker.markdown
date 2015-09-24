@@ -14,6 +14,8 @@ know about it sooner. Also note that I run *npm install* with *production*
 switch so it doesn't install dev dependencies, which I don't really need to run
 my app.
 
+<!--more-->
+
 ## Dockerfile
 {% highlight text %}
 FROM yeghishe/nodejs:0.12.7

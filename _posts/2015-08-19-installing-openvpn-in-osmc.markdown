@@ -16,6 +16,8 @@ I had to do everything manually again. Decided to write about it in case others
 would be interested in creating similar setup also. And since OSMC is built on
 top of Debian, this guide mostly applies to any Debian based setup.
 
+<!--more-->
+
 Before anything let's install needed packages and switch to root user since
 most of what we'll do will require sudo permissions:
 {% highlight bash %}

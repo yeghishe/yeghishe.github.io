@@ -18,6 +18,8 @@ little for me, the real benefit of this project though is when other people are
 also working on the same project. So you end up with consistent style and this
 kind of things I always appreciate.
 
+<!--more-->
+
 However, sharing my generic editorconfig file in case others will find it useful.
 
 {% gist yeghishe/a402fd29f3852fb28523 %}

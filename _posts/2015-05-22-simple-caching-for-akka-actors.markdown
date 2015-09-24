@@ -15,6 +15,8 @@ problem without cache at first place). But it's a good thing that we know we
 need to scale out from the beginning because I didn't mention about high
 availability yet, so we at least need two boxes.
 
+<!--more-->
+
 Pros of caching result in actor's own memory is one
 it's gonna be fast and more reliable since it doesn't have to go to a
 centralize cache box over the network, and do you even wanna have to manage

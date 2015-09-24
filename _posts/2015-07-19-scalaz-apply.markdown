@@ -14,6 +14,8 @@ kind B.  And since *Apply* is also a functor we also have
 def map[A, B](fa: F[A])(f: A ⇒ B): F[B]
 {% endhighlight %}
 
+<!--more-->
+
 We can do interesting things with those two. We can define *ap2* for example,
 which will take, F[A], F[B], F[(A, B) ⇒ C] and return F[C]
 {% highlight scala %}

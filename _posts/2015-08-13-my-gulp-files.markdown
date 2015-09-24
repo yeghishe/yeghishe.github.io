@@ -18,6 +18,8 @@ combination on it's own makes my gulp files pretty unique. Listing links to
 individual posts where I have my gulp file and I'm explaining which task is
 doing what.
 
+<!--more-->
+
 * [My Gulp Files: Library Projects]({% post_url 2015-08-13-my-gulp-files-library %})
 * [My Gulp Files: Rest Api Projects]({% post_url 2015-08-13-my-gulp-files-rest-api %})
 * [My Gulp Files: Ionic App Projects]({% post_url 2015-08-13-my-gulp-files-ionic-app %})

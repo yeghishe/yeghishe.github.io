@@ -9,6 +9,8 @@ see what you misspell as you go. I prefer Vim for most part and it being a
 command line application you think you'll be out of options there but no.
 Vim has a nice built in spell checker.
 
+<!--more-->
+
 Set local in your *vimrc*, this is what I have set
 
     setlocal spell spelllang=en_us

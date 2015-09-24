@@ -19,6 +19,8 @@ and magic! It went and downloaded needed sbt version and loaded sbt environment
 for him. And the reason I started my own activator templates at first place is
 because it solves another big problem for me.
 
+<!--more-->
+
 I'm usually working on three type of projects in scala world, simple libraries,
 akka applications or akka http applications. I found myself on copy pasting
 build files, sbt plugins file, dependencies, configuration, etc.. from other

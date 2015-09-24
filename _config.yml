@@ -12,6 +12,7 @@ linkedin_username: ypiruzyan
 
 # Build settings
 markdown: kramdown
+excerpt_separator: <!--more-->
 
 paginate: 10
 sass:

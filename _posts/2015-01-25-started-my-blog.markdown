@@ -7,6 +7,8 @@ with new stuff, facing some challenges that I end up solving.
 Always wanted to blog about what I'm working on since if it interests me then
 others can also find it helpful or interesting.
 
+<!--more-->
+
 So I finally decided to create one. There are many blog platforms out there.
 I'm not really into CMS, I would much rather open Vim, write some markdown,
 publish it somewhere and call it a blog post. Seemed like what I want is github

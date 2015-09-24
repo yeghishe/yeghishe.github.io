@@ -11,6 +11,8 @@ def map[A, B](fa: F[A])(f: A ⇒ B): F[B]
 Having a higher kind A and A to B mapping we can get higher
 kind B.
 
+<!--more-->
+
 Having map function we can define *lift* fucntion that takes A ⇒ B mapping and
 it lifts it to F[A] ⇒ F[B] mapping.
 {% highlight scala %}

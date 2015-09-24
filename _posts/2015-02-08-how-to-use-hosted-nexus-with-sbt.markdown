@@ -11,6 +11,8 @@ helpful when you have more than one person working on the project or you simply
 have some jars that aren't in maven central or other public repos and you want
 to host those so you can list them as dependencies from your build tool.
 
+<!--more-->
+
 My favorite artifact server is nexus for many reasons. It's feature reach, easy
 to use and can support npm, gem, NuGet artifacts besides jars. So for our scala
 projects I decided to go with nexus. After artifacts are produced those aren't

@@ -17,6 +17,8 @@ JavaScript, pretty smart right :). I also use CoffeScript for my
 gulpfile since it makes it much more clean and compact. Some people who do
 that like to also create *gulpfile.js* file with
 
+<!--more-->
+
 {% highlight js %}
 require('coffee-script/register');
 require('./gulpfile.coffee');

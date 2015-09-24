@@ -5,6 +5,8 @@ tags: sbt scala
 Sbt is really awesome and there are plugins that make it even better. I thought
 I would write a post about the plugins I'm using and why I like to use those.
 
+<!--more-->
+
 ## Formatting your code.
 
 For formatting scala code I use *sbt-scalariform*. It does a great job

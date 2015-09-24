@@ -41,6 +41,8 @@ is offering here. *FunSuite* and *FlatSpec*, you can read more about those in
 ScalaTest documentation. Both are flat as mentioned, one is more like jUnit,
 other is more like xUnit.
 
+<!--more-->
+
 Next group is property based testing or table based testing. I find
 this useful to test utility methods I write. Let's say we're writing absolute
 method but before doing it we want to have following tests:

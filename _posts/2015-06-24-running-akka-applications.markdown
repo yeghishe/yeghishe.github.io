@@ -17,6 +17,8 @@ production and pre production environments. Unforunatly I didn't get hold of
 this post. Btw, most of this should be to relevant other scala/java main class
 applications not only *akka* and *akka http* applications.
 
+<!--more-->
+
 ## How to run in development
 
 Since it's development environment things are easier because we have the tools

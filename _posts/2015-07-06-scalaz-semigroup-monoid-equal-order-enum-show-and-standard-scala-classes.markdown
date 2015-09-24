@@ -11,6 +11,8 @@ in standard scala library. What the anomalies of basic types are in standard
 scala library, what are the comment things between them that can be made
 generic, how to use scalaz with standard classes defined in scala library.
 
+<!--more-->
+
 ## [Semigroup](#semigroup)
 *Semigroup* brings *append* operation and it
 should be associative. We see in standard library append operation is
