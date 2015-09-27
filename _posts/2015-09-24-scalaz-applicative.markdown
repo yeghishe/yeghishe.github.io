@@ -3,7 +3,7 @@ title:  "Scalaz Applicative"
 tags: scala scalaz
 ---
 
-*Applicative* is *Apply* that also has *point* or *pure* method.
+*Applicative* is *Apply* that also has *point* or *pure* methods.
 Scalaz defines *Applicative[F[_]]* trait with *point* abstract method.
 {% highlight scala %}
 def point[A](a: => A): F[A]

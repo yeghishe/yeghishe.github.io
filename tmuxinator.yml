@@ -1,0 +1,25 @@
+# ln -s ~/project/yeghishe.github.io/tmuxinator.yml blog.yml
+
+name: blog
+root: ~/project/yeghishe.github.io
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - editor: vi
+  - server: jekyll serve --drafts
+  - bash:
+      layout: even-vertical
+      panes:
+        - #empty
+        - #empty

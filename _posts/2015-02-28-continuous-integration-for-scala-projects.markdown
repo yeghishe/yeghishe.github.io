@@ -219,7 +219,7 @@ build, and comment github pull request.
 
 ![pull request comment picture]({% asset_path pr_build.png %})
 
-To get this working all you need to do is to create another job that instaed of
+To get this working all you need to do is to create another job that instead of
 building master will build pull requests. For this job there are few things
 we don't actually need. We don't care do generate scala docs for this type
 of builds, version or publish the artifacts, so make sure to exclude those steps
