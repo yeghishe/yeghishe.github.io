@@ -16,6 +16,8 @@ Note that *Applicative* implements map using *point* and *ap* methods:
 override def map[A, B](fa: F[A])(f: A => B): F[B] = ap(fa)(point(f))
 {% endhighlight%}
 
+<!--more-->
+
 Scalaz offers following syntax/derived functions:
 
 * **η**, **point** and **pure**. Lift value into F.
