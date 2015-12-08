@@ -22,7 +22,7 @@ I'll put the links to all posts here so it's easy to navigate.
 * [Methods Scalaz Adds To Standard Classes - Integer, String and Boolean]({% post_url 2015-07-13-scalaz-methods-scalaz-adds-to-standard-classes-integer-string-boolean %})
 * [Scalaz Functor]({% post_url 2015-07-15-scalaz-functor %})
 * [Scalaz Apply]({% post_url 2015-07-19-scalaz-apply %})
-* [Scalaz Applicative]({% post_url 2015-09-24-scalaz-applicative %})
+* [Scalaz Applicative]({% post_url 2015-09-26-scalaz-applicative %})
 {% comment %}
 * scalaz-bind
 * scalaz-cobind.markdown

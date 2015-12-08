@@ -45,15 +45,44 @@ $on-laptop:        800px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
+/*
 @import
         "base",
         "layout",
         "customize",
         "syntax-highlighting"
 ;
+*/
 
 img {
   width: 70%;
   display: block;
   margin: 0 auto;
+}
+
+.social-media-list i {
+  color: #828282;
+}
+
+.navbar-default {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-default .navbar-nav > li {
+  margin: 2px;
+}
+
+.navbar-default .navbar-nav > li >a {
+  padding: 2px 8px;
+  font-size: 75%;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #337ab7;
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li >a:hover {
+  background-color: red;
 }
