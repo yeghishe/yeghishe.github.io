@@ -1,5 +1,7 @@
 # Site settings
 title: Yeghishe Piruzyan
+name: Yeghishe Piruzyan's blog
+author: Yeghishe Piruzyan
 email: ypiruzyan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I'm a software engineer based in Los Angeles. I'll be blogging about interesting technologies and challanges I face that others may find helpful.
@@ -22,16 +24,8 @@ timezone: America/Los_Angeles
 host: 0.0.0.0
 port: 9003
 
-exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
-
-sitemap:
-  file: "/sitemap.xml"
-  exclude:
-    - "/about.md"
-    - "/feed.xml"
-    - "/css/main.scss"
-  include_posts:
-    - "/index.html"
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md', 'tmuxinator.yml']
+gems: [jekyll-paginate, jekyll-gist, jekyll-feed, jekyll-sitemap]
 
 defaults:
   -
@@ -48,4 +42,3 @@ defaults:
     values:
       layout: "post"
       author: "Yeghishe Piruzyan"
-

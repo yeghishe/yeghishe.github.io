@@ -10,7 +10,7 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
       self.data['tag'] = tag
-      self.data['posts'] = site.posts.select { |p| p['tags'].include? tag }
+      self.data['posts'] = site.collections["posts"].docs.select { |p| p['tags'].include? tag }
     end
   end
 
