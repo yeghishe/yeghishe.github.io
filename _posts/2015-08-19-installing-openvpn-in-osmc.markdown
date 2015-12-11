@@ -104,6 +104,13 @@ different port or be tcp, make sure to change this. *redirect-gateway* is to
 forward internet traffic and to be able to access other boxes on the network.
 Next line is to resolve dns. I put my router gateway so local hostnames will
 also resolve. Your gateway may be different.
+If for a scpecific client we don't want to redirect internet traffic we can add
+this to client config:
+{% highlight bash %}
+route-nopull
+route 192.168.1.0 255.255.255.0
+dhcp-option DNS 192.168.1.1
+{% endhighlight %}
 
 Now we need to configure os for forwarding. Run:
 {% highlight bash %}
