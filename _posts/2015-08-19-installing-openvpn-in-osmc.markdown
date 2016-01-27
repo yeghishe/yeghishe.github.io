@@ -67,6 +67,11 @@ To build the DH key run:
 ./build-dh
 {% endhighlight %}
 
+To build the TA key run:
+{% highlight bash %}
+openvpn --genkey --secret ta.key
+{% endhighlight %}
+
 After having keys generated, let's create the server config in
 */etc/openvpn/server.conf* file:
 {% highlight text %}
@@ -78,6 +83,8 @@ ca      /etc/openvpn/easy-rsa/keys/ca.crt    # generated keys
 cert    /etc/openvpn/easy-rsa/keys/server.crt
 key     /etc/openvpn/easy-rsa/keys/server.key  # keep secret
 dh      /etc/openvpn/easy-rsa/keys/dh2048.pem
+
+tls-auth /etc/openvpn/easy-rsa/keys/ta.key 0
 
 server 10.9.8.0 255.255.255.0  # internal tun0 connection IP
 ifconfig-pool-persist ipp.txt
@@ -178,6 +185,7 @@ nobind
 ca ca.crt
 cert CLIENT NAME.crt
 key CLIENT NAME.key
+tls-auth ta.key 1
 
 comp-lzo
 persist-key
@@ -196,13 +204,19 @@ For iOS, setup is similar but we'll use *.ovpn* file with certs and key embedded
 in it. Save the above config in *.ovpn* file without *ca*, *cert* and
 *key* lines, name it your CLIENT NAME.ovpn and run following lines:
 {% highlight bash %}
+echo "<tls-auth>" >>  CLIENT NAME.ovpn
+cat ta.key | grep -A 100 "BEGIN OpenVPN Static key V1" | grep -B 100 "END OpenVPN Static key V1" >>  CLIENT NAME.ovpn
+echo "</tls-auth>" >>  CLIENT NAME.ovpn
+
 echo "set CLIENT_CERT 0" >> CLIENT NAME.ovpn
 echo "<ca>" >> CLIENT NAME.ovpn
 cat ca.crt | grep -A 100 "BEGIN CERTIFICATE" | grep -B 100 "END CERTIFICATE" >> CLIENT NAME.ovpn
 echo "</ca>" >> CLIENT NAME.ovpn
+
 echo "<cert>" >> CLIENT NAME.ovpn
 cat CLIENT NAME.crt | grep -A 100 "BEGIN CERTIFICATE" | grep -B 100 "END CERTIFICATE" >> CLIENT NAME.ovpn
 echo "</cert>" >> CLIENT NAME.ovpn
+
 echo "<key>" >> CLIENT NAME.ovpn
 cat CLIENT NAME.key | grep -A 100 "BEGIN PRIVATE KEY" | grep -B 100 "END PRIVATE KEY" >> CLIENT NAME.ovpn
 echo "</key>" >> CLIENT NAME.ovpn
