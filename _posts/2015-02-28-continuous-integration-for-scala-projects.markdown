@@ -63,7 +63,7 @@ checks, if it does let's continue.
 Since we compiled the code and we got the output we can look for compiler
 warnings, so can Jenkins.
 
-![warnings picture]({% asset_path warnings.png %})
+{% img posts/{{page.slug}}/warnings.png alt:'warnings picture' %}
 
 # Code quality
 
@@ -82,7 +82,7 @@ Jerkins has a plugin for Checkstyle already. We'll run this via
 ```sbt scalastyle``` task and get the report file generated. Once we have it we
 can tell Jenkins to pick it up.
 
-![checkstyle picture]({% asset_path checkstyle.png %})
+{% img posts/{{page.slug}}/checkstyle.png alt:'checkstyle picture' %}
 
 ## Open tasks
 
@@ -91,7 +91,7 @@ project and if there are what are those. Jenkins has a way to detect
 tags like TODO, FIXME and others. Jenkins has a feature where it can scan the
 code to find those, just configure it.
 
-![open tasks picture]({% asset_path open_tasks.png %})
+{% img posts/{{page.slug}}/open_tasks.png alt:'open tasks picture' %}
 
 ## Unit tests
 
@@ -101,7 +101,7 @@ have it Jenkins already has an integration for junit so we would be done there
 just tell Jenkins there those xml files are. Same goes for other flavors
 of test, like it:test.
 
-![unit tests picture]({% asset_path unit_tests.png %})
+{% img posts/{{page.slug}}/unit_tests.png alt:'unit tests picture' %}
 
 ## Code coverage
 
@@ -112,7 +112,7 @@ I'm using *scoverage*. Nice thing about it is that it generates cobertura
 coverage report and as you can guess Jenkins already has integration with
 cobertura.
 
-![cobertura picture]({% asset_path cobertura.png %})
+{% img posts/{{page.slug}}/cobertura.png alt:'cobertura picture' %}
 
 At this point we got enough checks in already. Build on it's own is boolean,
 it either passes or it fails. For things like compilation and unit testing it's
@@ -131,7 +131,7 @@ be more specific (well in this instance scala docs).
 example) will generate scala docs and Jenkins can pick it up and display
 the link on the dashboard or we can host it as a static website somewhere.
 
-![javadoc picture]({% asset_path javadoc.png %})
+{% img posts/{{page.slug}}/javadoc.png alt:'javadoc picture' %}
 
 ## Final Sbt configuration
 
@@ -143,7 +143,7 @@ you project), run tests and integration tests, publish the artifacts
 (will cover publishing later in the post). And doc task run as part of publish
 since it's a dependency of it but it never hurts to put it there explicitly.
 
-![sbt picture]({% asset_path sbt.png %})
+{% img posts/{{page.slug}}/sbt.png alt:'sbt picture' %}
 
 # Notifications
 
@@ -158,14 +158,14 @@ IM whatever you're using, Jenkins has plugins for all of those. I personally
 like to send an email out when a job fails and put a message in a Slack room
 when a job starts or finishes.
 
-![email picture]({% asset_path email.png %})
+{% img posts/{{page.slug}}/email.png alt:'email picture' %}
 
-![slack picture]({% asset_path slack1.png %})
+{% img posts/{{page.slug}}/slack1.png alt:'slack picture' %}
 
 And include Slack notifications at post build step at the bottom of job
 configuration.
 
-![slack picture]({% asset_path slack2.png %})
+{% img posts/{{page.slug}}/slack2.png alt:'slack picture' %}
 
 ## Output of the build
 
@@ -186,7 +186,7 @@ are nice Sbt or Jenkins plugins for all those. For Nexus I use an sbt plugin
 and when you do ```sbt publish``` it uploads the artifact to my private nexus
 server.
 
-![artifacts in nexus picture]({% asset_path nexus.png %})
+{% img posts/{{page.slug}}/nexus.png alt:'artifacts in nexus picture' %}
 
 ## Versioning
 
@@ -200,7 +200,7 @@ running ```sbt version```, storing it in an environment variable
 (VERSION for example) and use Git publisher functionality of Jenkins to create
 a git tag with that version.
 
-![git tag picture]({% asset_path git_tag.png %})
+{% img posts/{{page.slug}}/git_tag.png alt:'git tag picture' %}
 
 ## Pull requests
 
@@ -217,7 +217,7 @@ request somehow it has a flag on it saying build is passing for it or no.
 There is a Jenkins plugin for building pull requests also, it will run the
 build, and comment github pull request.
 
-![pull request comment picture]({% asset_path pr_build.png %})
+{% img posts/{{page.slug}}/pr_build.png alt:'pull request comment picture' %}
 
 To get this working all you need to do is to create another job that instead of
 building master will build pull requests. For this job there are few things
@@ -243,11 +243,11 @@ Other than those we get lot of nice features on Jenkins dashboard.
 * Navigate to scala docs.
 * See code full coverage reports with percentages, which lines are covered which ones aren't, classes, packages.
 
-![jenkins dashboard picture]({% asset_path jenkins_dash1.png %})
+{% img posts/{{page.slug}}/jenkins_dash1.png alt:'jenkins dashboard picture' %}
 
 We can see the build history and dig dipper in a particular build.
 
-![jenkins dashboard picture]({% asset_path jenkins_dash2.png %})
+{% img posts/{{page.slug}}/jenkins_dash2.png alt:'jenkins dashboard picture' %}
 
 <br/>
 <br/>
@@ -257,8 +257,8 @@ increases or decrease's. Of course we want it to see number of violations and
 open tasks decreasing and number of unit tests increasing. Just a good way to
 measure how quality changes with every commit.
 
-![jenkins dashboard picture]({% asset_path jenkins_dash3.png %})
+{% img posts/{{page.slug}}/jenkins_dash3.png alt:'jenkins dashboard picture' %}
 
-![jenkins dashboard picture]({% asset_path jenkins_dash4.png %})
+{% img posts/{{page.slug}}/jenkins_dash4.png alt:'jenkins dashboard picture' %}
 
-![jenkins dashboard picture]({% asset_path jenkins_dash5.png %})
+{% img posts/{{page.slug}}/jenkins_dash5.png alt:'jenkins dashboard picture' %}

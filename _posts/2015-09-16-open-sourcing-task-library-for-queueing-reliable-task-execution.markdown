@@ -39,16 +39,16 @@ to actor B in Akka; there's no other complexity there.
 <!--more-->
 
 This is how messages are sent between two actors in Akka.
-![diagram 1]({% asset_path d1.png %})
+{% img posts/{{page.slug}}/d1.png alt:'diagram 1' %}
 
 And this is how that same message is sent from actor A to actor B using Task
 library. You just wrap it in *Task* envelope, specifying the type of task
 (push message for example) and send it to *TaskActor*. Actor B will *eventually*
 receive that message.
-![diagram 2]({% asset_path d2.png %})
+{% img posts/{{page.slug}}/d2.png alt:'diagram 2' %}
 
 What's happening under the hood is the following:
-![diagram 3]({% asset_path d3.png %})
+{% img posts/{{page.slug}}/d3.png alt:'diagram 3' %}
 Based on the configuration, where Task library is embedded, we specify the
 producers and consumers the project will run. Here is an example config,
 which specifies that this project is running *sometask* producer,
@@ -99,10 +99,10 @@ type of reusable consumers into the Task library itself, which will increase the
 things it'll be able to do out of the box.
 
 With this type of common task, all we need is:
-![diagram 4]({% asset_path d4.png %})
+{% img posts/{{page.slug}}/d4.png alt:'diagram 4' %}
 
 And under the hood it will do this:
-![diagram 5]({% asset_path d5.png %})
+{% img posts/{{page.slug}}/d5.png alt:'diagram 5' %}
 
 Those are the features we have in current version of Ad Hoc Labs Task library.
 There are lot of other things I hope to build for it and open sourcing it was
@@ -127,17 +127,17 @@ Some ideas on what I would like to build for v1.0.0:
 
 More about that -- when you think about it there are two clear partitions there,
 the publisher side and the consumer side.
-![diagram 6]({% asset_path d6.png %})
+{% img posts/{{page.slug}}/d6.png alt:'diagram 6' %}
 
 Built-in or common consumers will be built right into Task library and it'll always be Scala.
 The Producer side, however, doesn't have to be Scala. As long as the message gets to the
 backend and there is a predefined protocol for messages, task library workers can pick it
 up and process the task.
-![diagram 7]({% asset_path d7.png %})
+{% img posts/{{page.slug}}/d7.png alt:'diagram 7' %}
 
 That would be a good idea if some people already have infrastructure that talks
 to RabbitMQ or Kafka. A cleaner approach would be to put an HTTP layer on top of Task library, which would take the massages from REST layer and use publisher infrastructure that's already in Task library. This way the backend would still be encapsulated and pluggable. A couple of servers can run the Task HTTP service behind a load balancer for producing, and a set of servers can run Task library directly as workers (which it already is able to do.)
-![diagram 8]({% asset_path d8.png %})
+{% img posts/{{page.slug}}/d8.png alt:'diagram 8' %}
 
 This would make the project go beyond being a nice Scala library, to a
 project that's able to process common tasks in a reliable manner and can be used

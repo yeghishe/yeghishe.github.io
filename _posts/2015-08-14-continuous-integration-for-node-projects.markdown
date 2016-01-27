@@ -69,18 +69,18 @@ installs isolated node environments in Jenkins's home directory.
 After installing it in *Configure System* add *NodeJs Installation* specify the
 version of node to use, global packages to install and give it a name.
 
-![node installation]({% asset_path node_installation.png %})
+{% img posts/{{page.slug}}/node_installation.png alt:'node installation' %}
 
 Later in job configuration, under *Build Environment* section, select
 *Provide Node & npm bin/ folder to PATH* and pick the node installation you
 wanna use for that project.
 
-![build environment]({% asset_path build_environment.png %})
+{% img posts/{{page.slug}}/build_environment.png alt:'build environment' %}
 
 After this, we can provide the commands to execute for our build. This is how
 it'll look like for library projects.
 
-![build execute shell]({% asset_path build_execute_shell.png %})
+{% img posts/{{page.slug}}/build_execute_shell.png alt:'build execute shell' %}
 
 Let's dig deep to understand what we're doing here. First we do **npm install**,
 so if a commit has a new dependency or upgraded a dependency we'll have it
@@ -99,7 +99,7 @@ After the build succeeds I run **npm publish** to publish my npm and run
 **gulp version**, store it in *build.properties* which I'm gonna inject into
 Jenkins environment and tag the git commit with that version later.
 
-![inject environment variables]({% asset_path inject_environment_variables.png %})
+{% img posts/{{page.slug}}/inject_environment_variables.png alt:'inject environment variables' %}
 
 At this point build is done. What we have is report files that we're gonna
 use to generate graphs and reports. We also published the npm so let's also tag
@@ -110,13 +110,13 @@ the commit with same version. And at the end send slack and email notifications.
 In our build we ran *gulp lint* and stored the output in
 *build/checkstyle-report-coffee.xml* so let's point checkstyle plugin to it:
 
-![checkstyle]({% asset_path checkstyle.png %})
+{% img posts/{{page.slug}}/checkstyle.png alt:'checkstyle' %}
 
 What we'll get is nice report pages where we can drill down to see what the
 warnings and errors are, in which files, line numbers and event see the line of
 code. We'll get nice summery on job page, also trend graph.
 
-![checkstyle graph]({% asset_path checkstyle_graph.png %})
+{% img posts/{{page.slug}}/checkstyle_graph.png alt:'checkstyle graph' %}
 
 ## Open tasks
 
@@ -126,22 +126,22 @@ tags like TODO, FIXME and others. It scans the code to find those, let's
 configure it. Notice that I'm excluding *node_modules* to not count open tasks
 in dependency modules.
 
-![open tasks]({% asset_path open_tasks.png %})
+{% img posts/{{page.slug}}/open_tasks.png alt:'open tasks' %}
 
 What we'll get is a nice reports and trend graph on our job page.
 
-![open tasks graph]({% asset_path open_tasks_graph.png %})
+{% img posts/{{page.slug}}/open_tasks_graph.png alt:'open tasks graph' %}
 
 ## Unit tests
 
 In our build script we put *JUNIT_REPORT_PATH=build/test-report.xml* so our
 jUnit xml reports file are in that file, let's just point jenkins to it.
 
-![unit tests]({% asset_path unit_tests.png %})
+{% img posts/{{page.slug}}/unit_tests.png alt:'unit tests' %}
 
 What we'll get is a nice reports and trend graph on our job page.
 
-![unit tests graph]({% asset_path unit_tests_graph.png %})
+{% img posts/{{page.slug}}/unit_tests_graph.png alt:'unit tests graph' %}
 
 ## Code coverage
 
@@ -152,11 +152,11 @@ cobertura reports also (in *build/coverage/cobertura-coverage.xml* file.)
 So let's use it.
 
 
-![cobertura]({% asset_path cobertura.png %})
+{% img posts/{{page.slug}}/cobertura.png alt:'cobertura' %}
 
 What we'll get is a nice reports and trend graph on our job page.
 
-![cobertura graph]({% asset_path cobertura_graph.png %})
+{% img posts/{{page.slug}}/cobertura_graph.png alt:'cobertura graph' %}
 
 ## Output of the build
 
@@ -183,7 +183,7 @@ was doing some serious gymnastics in build script to get it into *VERSION*
 environment variable. I would just use Git publisher functionality of Jenkins
 to create a git tag with that version.
 
-![git tag]({% asset_path git_tag.png %})
+{% img posts/{{page.slug}}/git_tag.png alt:'git tag' %}
 
 # Notifications
 
@@ -198,14 +198,14 @@ IM whatever you're using, Jenkins has plugins for all of those. I personally
 like to send an email out when a job fails and put a message in a Slack room
 when a job starts or finishes.
 
-![email]({% asset_path email.png %})
+{% img posts/{{page.slug}}/email.png alt:'email' %}
 
-![slack]({% asset_path slack1.png %})
+{% img posts/{{page.slug}}/slack1.png alt:'slack' %}
 
 And include Slack notifications at post build step at the bottom of job
 configuration.
 
-![slack]({% asset_path slack2.png %})
+{% img posts/{{page.slug}}/slack2.png alt:'slack' %}
 
 ## Pull requests
 
@@ -222,7 +222,7 @@ request somehow it has a flag on it saying build is passing for it or no.
 There is a Jenkins plugin for building pull requests also, it will run the
 build, and comment github pull request.
 
-![pull request comment]({% asset_path pr_build.png %})
+{% img posts/{{page.slug}}/pr_build.png alt:'pull request comment' %}
 
 To get this working all you need to do is to create another job that instead of
 building master will build pull requests. For this job there are few things
