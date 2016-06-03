@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/yeghishe
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://yeghishe.github.io
+  * I am yeghishe (https://keybase.io/yeghishe) on keybase.
+  * I have a public key with fingerprint 6BA1 6C48 3A75 BD91 E4AD  A1CF 202D A197 5A0E 49FA
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010109375359182411eb3ab9c9582979d7c843af5a74f86f4e9c3b62513fef9a34c70a",
+            "fingerprint": "6ba16c483a75bd91e4ada1cf202da1975a0e49fa",
+            "host": "keybase.io",
+            "key_id": "202da1975a0e49fa",
+            "kid": "010109375359182411eb3ab9c9582979d7c843af5a74f86f4e9c3b62513fef9a34c70a",
+            "uid": "47b1f50f2963967f388c602772936119",
+            "username": "yeghishe"
+        },
+        "service": {
+            "hostname": "yeghishe.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1464993531,
+    "expire_in": 157680000,
+    "prev": "c8982eec8682ca7a4f8b2d163467caa510e5761e2cb559c43981b3eb8bb0da00",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMInAnicrVJdSBRRGN3V1Vort6xUkmAbEksWmTv/d0MrIioiyMzCCpZ7Z+7sTm07
+28zs2mJKwm4+1EMZlT2I/RGVSdAPBRL9QoFEFuGDVKAJQUQWUQRGdsfqJXrs3oeP
++91zzj3n4z6cle8p8n7J3xcqHQylvQP3ulOerZsKJ1oYbGoZJtzC7CJThcQ1YjuR
+XYbGhBkW0A15WeRFCBROAIBgHmGoQlHhoAw1WVUEHukikgVdkXSBQJXHEicCXic6
+RLygyixiQoxuJKLESlpGwqGyEkZAUgWFR7KINQiIgDQEVJ1jOVqhLCKWCFB3iTHT
+dhnUHEY2qTFM2qOHyJS9f+D/s+/UlJwgY6CLrM5BiYeSrPOKokosJ8sc5CUAoAu0
+iZVAuwlFZ0g0ZtgxwrSGGNpNGypxB+sm+QtREzWcWAr/SpW0TMdUzTi9jzlO0g67
+fCeTdAnNBEd+S0WwkdDoNCkjTSzbMBNMGFCk6hiuNhAkAUJe5EGIIXuThkUihosQ
+ZUlh6XLfIWkqqSpQ4QhRFUnhVCQjOgfMaUDiBUlWERIBSygHEE7FoghVgYcKwDzB
+CsashliWccPtSZhMWKA2UZRK2kY0gZyURZPfv7vD5/EWeQoL8txf5inyz/7z91qW
+TJtMPvX1fep55N/m7+wta/Cf23KiNfjVX5E7VF0drT8ZGJ+89Fpkhh5/fH72+nal
+bXO8Jw8Ofv5xcP6LrVJqUf+BgvOrampOs0crXz5b2Lghd4qcGRuZkBpvZhtuP5nV
+3Ht1ffv+fXIFurw3Xt1evHqmT6oq/GT6SjZM3OgfIg9DXSt+3LhmjWTfB6pKZ44u
+HgiZ8zrHl7aunFF/8UHltyOdy9vq3ozWnaktvrmubzRQ3rR5W+a451Z8ge/wnZ23
+fFXBXNN376pI9t2H6b6LHRuPXMnWdqH42guBvmBgrMk/e9nko8a3xtyyrmPlp1vL
+hpvm1DeWDGTXVJ7P9L/q6A5WO7nhn1P4M/U=
+=TSf5
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/yeghishe
+
+==================================================================
+
