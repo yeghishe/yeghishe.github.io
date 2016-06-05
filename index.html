@@ -2,7 +2,5 @@
 layout: default
 ---
 
-<div class="home">
-  {% include post_list.html posts=paginator.posts %}
-  {% include pager.html paginator=paginator %}
-</div>
+{% include post_list.html posts=paginator.posts %}
+{% include pager.html paginator=paginator %}

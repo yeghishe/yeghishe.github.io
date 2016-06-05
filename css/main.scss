@@ -6,30 +6,34 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size:   16px;
+$font-weight: 400;
+$smaller-font-size:  13px;
+$bigger-font-size:  $font-size * 1.4;
+$line-height: 1.5;
 
-$spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+//$spacing-unit:     30px;
+
+$text-color:           #333;
+$background-color:     #fff;
+$grey-color:           #f7f7f7;
+$site-color:           #5b5b5b;
+$site-color-dark:      #424242;
+$site-text-color:      #f9f9f9;
+$site-text-color-dark: #c6c6c6;
+$site-link-color:      #5bbb60;
+$site-link-color-dark: #43A047;
+$about-color:          #4DB6AC;
+
 $brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
 
 
-
-// Using media queries with like this:
+// Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
 //         padding-right: $spacing-unit / 2;
@@ -46,14 +50,8 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "customize",
-        "syntax-highlighting"
+        //"base",
+        //"layout",
+        //"syntax-highlighting",
+        "customize"
 ;
-
-img {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-}

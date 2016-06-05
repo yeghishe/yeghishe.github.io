@@ -4,7 +4,7 @@
   {% else %}
     <li class="disabled"><a href="#">Previous</a></li>
   {% endif %}
-  <li><span>Page: {{ include.paginator.page }} of {{ paginator.total_pages }}</span></li>
+  <li>{{ include.paginator.page }} of {{ paginator.total_pages }}</li>
   {% if include.paginator.next_page %}
     <li><a href="{{ include.paginator.next_page_path }}">Next</a></li>
   {% else %}

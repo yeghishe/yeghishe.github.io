@@ -23,11 +23,9 @@ I'll put the links to all posts here so it's easy to navigate.
 * [Scalaz Functor]({% post_url 2015-07-15-scalaz-functor %})
 * [Scalaz Apply]({% post_url 2015-07-19-scalaz-apply %})
 * [Scalaz Applicative]({% post_url 2015-09-24-scalaz-applicative %})
-{% comment %}
-* scalaz-bind
-* scalaz-cobind.markdown
-* scalaz-monad
-* scalaz-comonad
-* scalaz-plus-plusempty-isempty-applicativeplus-monadplus
-* scalaz-foldable
-{% endcomment %}
+* [Scalaz Bind]({% post_url 2016-06-04-scalaz-bind %})
+* [Scalaz Cobind]({% post_url 2016-06-04-scalaz-cobind %})
+* [Scalaz Monad]({% post_url 2016-06-04-scalaz-monad %})
+* [Scalaz Comonad]({% post_url 2016-06-04-scalaz-comonad %})
+* [Scalaz Plus, PlusEmpty, IsEmpty, ApplicativePlus and MonadPlus]({% post_url 2016-06-04-scalaz-plus-plusempty-isempty-applicativeplus-monadplus %})
+* [Scalaz Foldable]({% post_url 2016-06-04-scalaz-foldable %})

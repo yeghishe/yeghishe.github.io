@@ -3,13 +3,15 @@ title:  "Scalaz Foldable"
 tags: scala scalaz
 ---
 
-Scalaz provides foldable to define all fold operation.
+Scalaz provides foldable to define all fold operations.
 It has *Foldable[F[_]]* trait with two *foldMap* and *foldRight* abstract
 methods:
 {% highlight scala %}
 def foldMap[A,B](fa: F[A])(f: A ⇒ B)(implicit F: Monoid[B]): B
 def foldRight[A, B](fa: F[A], z: ⇒ B)(f: (A, => B) => B): B
 {% endhighlight %}
+
+<!--more-->
 
 *foldMap* says having a foldable A, a mapping function from A to B and B
 is monoid it will fold F[A] into B.

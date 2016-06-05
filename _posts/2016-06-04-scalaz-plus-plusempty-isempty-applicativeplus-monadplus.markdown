@@ -3,8 +3,10 @@ tags: scala scalaz
 title: Scalaz Plus, PlusEmpty, IsEmpty, ApplicativePlus and MonadPlus
 ---
 
+<!--more-->
+
 ## [Plus](#plus)
-*Plus* is silmiar to *Semigroup*, it actually is semigroup.
+*Plus* is similar to *Semigroup*, it actually is semigroup.
 Scalaz defines *Plus[F[_]]* trait with *plus* abstract method similar to
 *append* in *Semigroup[F]*. Where *Semigroup* deals with types *Plus* deals with
 higher Kinds.
@@ -28,7 +30,7 @@ It also has *monoid* method to convert *PlusEmpty* to *Monoid*.
 Scalaz offers *mempty* alias for *empty* function.
 
 ## [IsEmpty](#isempty)
-Scalaz defines *IsEmpty[F[_]]* trait wich exteands *PlusEmpty[F]* and adds
+Scalaz defines *IsEmpty[F[_]]* trait which extends *PlusEmpty[F]* and adds
 *isEmpty* method.
 {% highlight scala %}
 def isEmpty[A](fa: F[A]): Boolean
@@ -39,7 +41,7 @@ def isEmpty[A](fa: F[A]): Boolean
 
 Chris Stucchio wrote an
 [article](https://www.chrisstucchio.com/blog/2014/handle_failure_with_plus.html){:target="\_blank"}
-about handeling failures with ApplicativePlus that's helpful to read.
+about handling failures with ApplicativePlus that's helpful to read.
 
 ## [MonadPlus](#monadplus)
 *MonadPlus* is both *Monad* and *PlusEmpty*. Since this is a monad and it has
@@ -48,7 +50,7 @@ about handeling failures with ApplicativePlus that's helpful to read.
 def filter[A](fa: F[A])(f: A => Boolean) = bind(fa)(a => if (f(a)) point(a) else empty[A])
 {% endhighlight %}
 
-*filter* will lift A if predicate retruns true and will return empty otherwise.
+*filter* will lift A if predicate returns true and will return empty otherwise.
 There is also *withFilter* alias for *filter* method.
 
 {% highlight scala %}
@@ -56,5 +58,5 @@ def unite[T[_], A](value: F[T[A]])(implicit T: Foldable[T]): F[A] =
   bind(value)((ta) => T.foldMap(ta)(a => point(a))(monoid[A]))
 {% endhighlight %}
 
-Which talkes foldable monad and it folds it into monad. Since *MonadPlus* is a
+Which takes foldable monad and it folds it into monad. Since *MonadPlus* is a
 monoid and T[A] is foldable, foldMap can be used here.

@@ -11,6 +11,8 @@ def copoint[A](p: F[A]): A
 Note that when *point* method of *Monad* turns A to F[A],
 *copoint* method of *Comonad* turns F[A] to A.
 
+<!--more-->
+
 Since *NonEmptyList* is *Comonad* I'm gonna demonstrate it on *NonEmptyList*:
 {% highlight scala %}
 import scalaz.NonEmptyList._
@@ -20,4 +22,4 @@ display(NonEmptyList(1, 2, 3).copoint, """ NonEmptyList(1, 2, 3).copoint """)
 {% endhighlight%}
 
 ## Output
-    NonEmptyList(1, 2, 3).copoint                              1
+    NonEmptyList(1, 2, 3).copoint    1

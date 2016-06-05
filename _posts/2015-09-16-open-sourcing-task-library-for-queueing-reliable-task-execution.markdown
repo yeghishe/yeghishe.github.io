@@ -1,5 +1,5 @@
 ---
-tags: scala
+tags: scala opensource
 ---
 
 Here at [Ad Hoc Labs](http://adhoclabs.co/){:target="_blank"} we are open-sourcing one of the

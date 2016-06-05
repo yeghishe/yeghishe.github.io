@@ -1,6 +1,5 @@
 # Site settings
-title: Yeghishe Piruzyan
-name: Yeghishe Piruzyan's blog
+title: Yeghishe Piruzyan's blog
 author: Yeghishe Piruzyan
 email: ypiruzyan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -15,6 +14,8 @@ linkedin_username: ypiruzyan
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--more-->
+
+highlighter: pygments
 
 paginate: 10
 sass:

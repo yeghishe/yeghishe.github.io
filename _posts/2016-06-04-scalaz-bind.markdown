@@ -20,6 +20,8 @@ override def ap[A, B](fa: => F[A])(f: => F[A => B]): F[B] = {
 }
 {% endhighlight%}
 
+<!--more-->
+
 Having *bind* method we can derive *join* method which will take F[F[A]] and
 turn it into F[A]:
 {% highlight scala %}

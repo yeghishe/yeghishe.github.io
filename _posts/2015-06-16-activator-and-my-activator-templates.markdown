@@ -51,7 +51,7 @@ To start a project run
 ###minimal-scala-akka-seed
 To start a project run
 
-    activator new <YOUR PROJECT NAME> minimal-scala-akk-seed
+    activator new <YOUR PROJECT NAME> minimal-scala-akka-seed
 
 [Github repo](https://github.com/yeghishe/minimal-scala-akka-seed){:target="_blank"}
 

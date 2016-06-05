@@ -1,15 +1,26 @@
 <ul class="post-list">
   {% for post in include.posts %}
     <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-      <h2>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <h2 class="post-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
+
+      <h3 class="post-details">
+        <time>{{ post.date | date: "%b %-d, %Y" }}</time> •
+
+        <ul class="tag-list">
+        {% for tag in post.tags %}
+          <li>
+            {% capture tag_url %}{{ "/tags/" }}{{ tag | slugify }}{% endcapture %}
+            <a href="{{ tag_url  | prepend: site.baseurl }}">{{tag | downcase | replace:" ","-" }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </h3>
 
       {{ post.excerpt }}
 
-      <a class="read-the-rest" href="{{ post.url | prepend: site.baseurl }}">Read the rest -&gt;</a>
+      <a class="btn btn-lg btn-default" href="{{ post.url | prepend: site.baseurl }}">read more</a>
     </li>
   {% endfor %}
 </ul>

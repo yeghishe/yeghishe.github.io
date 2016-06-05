@@ -12,10 +12,12 @@ Having F[A] and mapping F[A] to B it returns F[B]. Note that unlike *bind*
 method in *Bind* functor, *cobind* takes F[A] => B instead of A => F[B] function.
 
 Since we have *cobind* method we can define *cojoin* method bases on it.
-Unlike to *join* in *Bind*, it turns F[A] to F[F[A]] instaed of F[F[A]] to F[A].
+Unlike to *join* in *Bind*, it turns F[A] to F[F[A]] instead of F[F[A]] to F[A].
 {% highlight scala %}
 def cojoin[A](fa: F[A]): F[F[A]] = cobind(fa)(fa => fa)
 {% endhighlight %}
+
+<!--more-->
 
 Scalaz has *coflatten* alias for *cojoin* and *coflatMap* alias for *cobind*.
 
