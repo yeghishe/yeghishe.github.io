@@ -116,7 +116,7 @@ a.btn-default {
   margin: 0;
 
   a {
-    color: $text-color;
+    color: $site-color;
   }
   a:hover, a:focus {
     text-decoration: none;
@@ -159,6 +159,10 @@ a.btn-default {
   }
 
   .about {
+    .scala {
+      font-size: 17px;
+    }
+
     > a, p {
       color: $site-link-color-dark;
     }
