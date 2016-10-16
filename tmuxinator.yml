@@ -17,7 +17,7 @@ root: ~/project/yeghishe.github.io
 
 windows:
   - editor: vi
-  - server: jekyll serve --drafts
+  - server: ./run.sh
   - bash:
       layout: even-vertical
       panes:
