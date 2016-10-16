@@ -16,7 +16,7 @@ git checkout -B master
 rm -rf *
 mv $tmp_dir/* .
 git add .
-git commit -am $message
+git commit -am "$message"
 git push origin master --force
 git checkout blog
 echo yolo
