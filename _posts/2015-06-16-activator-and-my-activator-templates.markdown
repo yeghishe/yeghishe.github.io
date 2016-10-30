@@ -40,24 +40,35 @@ again and again.
 
 Here are my templates:
 
-###minimal-scala-lib-seed
-To start a project run
+### Minimal Scala Lib Seed
+Designed to create simple scala libraries. To create a project run:
 
     activator new <YOUR PROJECT NAME> minimal-scala-lib-seed
 
-[Github repo](https://github.com/yeghishe/minimal-scala-lib-seed){:target="_blank"}
+* [Activator page](https://www.lightbend.com/activator/template/minimal-scala-lib-seed){:target="_blank"}
+* [Github repo](https://github.com/yeghishe/minimal-scala-lib-seed){:target="_blank"}
 
 
-###minimal-scala-akka-seed
-To start a project run
+### Minimal Scala Akka Seed
+Designed to create Akka projects. To create a project run:
 
     activator new <YOUR PROJECT NAME> minimal-scala-akka-seed
 
-[Github repo](https://github.com/yeghishe/minimal-scala-akka-seed){:target="_blank"}
+* [Activator page](https://www.lightbend.com/activator/template/minimal-scala-akka-seed){:target="_blank"}
+* [Github repo](https://github.com/yeghishe/minimal-scala-akka-seed){:target="_blank"}
 
-###minimal-scala-akka-http-seed
-To start a project run
+### Minimal Scala Akka Http Seed
+Designed to create Akka Http projects. To create a project run:
 
     activator new <YOUR PROJECT NAME> minimal-scala-akka-http-seed
 
-[Github repo](https://github.com/yeghishe/minimal-scala-akka-http-seed){:target="_blank"}
+* [Activator page](https://www.lightbend.com/activator/template/minimal-scala-akka-http-seed){:target="_blank"}
+* [Github repo](https://github.com/yeghishe/minimal-scala-akka-http-seed){:target="_blank"}
+
+### Scala AWS Lambda Seed
+Designed to create Aws Lambdas using Scala projects. To create a project run:
+
+    activator new <YOUR PROJECT NAME> scala-aws-lambda-seed
+
+* [Activator page](https://www.lightbend.com/activator/template/scala-aws-lambda-seed){:target="_blank"}
+* [Github repo](https://github.com/yeghishe/scala-aws-lambda-seed){:target="_blank"}

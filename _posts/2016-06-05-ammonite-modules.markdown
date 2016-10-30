@@ -8,52 +8,43 @@ Ammonite is such a great project, especially [Ammonite-REPL](http://www.lihaoyi.
 
 The structure of the project is simple:
 {% highlight text %}
-├── versions.scala
+├── base.sc
 ├── modules
 │   ├── project1
-│   │   ├── project1-module1.scala
-│   │   ├── project1-module2.scala
-│   │   └── project1-module3.scala
+│   │   ├── project1-module1.sc
+│   │   ├── project1-module2.sc
+│   │   └── project1-module3.sc
 │   ├── project2
-│   │   ├── project2-module1.scala
-│   │   └── project2-module2.scala
+│   │   ├── project2-module1.sc
+│   │   └── project2-module2.sc
 │   ├── project3
-│   │   └── project3.scala
+│   │   └── project3.sc
 {% endhighlight %}
 
-Versions file contains all the versions (hopefully it will be maintained so all latest versions will be in master). Modules directory has all the modules. The idea here is that each project may have different modules and user chooses which module to load. For example this:
+`Base.sc` file contains all the versions (hopefully it will be maintained so all latest versions will be in master). Modules directory has all the modules. The idea here is that each project may have different modules and user chooses which module to load. For example this:
 {% highlight text %}
-├── versions.scala
+├── Base.sc
 ├── modules
 │   ├── akka
-│   │   ├── akka-actor.scala
-│   │   ├── akka-http.scala
-│   │   └── akka-stream.scala
+│   │   ├── akka-actor.sc
+│   │   ├── akka-http.sc
+│   │   └── akka-stream.sc
 │   ├── cats
-│   │   ├── cats-core.scala
-│   │   └── cats.scala
+│   │   ├── cats-core.sc
+│   │   └── cats.sc
 │   ├── circe
-│   │   └── circe.scala
+│   │   └── circe.sc
 {% endhighlight %}
 
 Here use can load `akka-actor`, `akka-http`, `akka-stream`, etc. All three are different modules. Or user may want to load only `cats-core` vs `cats` (all cats projects). Or it can be a simple project with only one module, like `circe` in this example.
 
-To load a module, for example `cats-core`, we cd into ammonties-module directory (which you hopefully already cloned) and run this in Ammonite Repl:
+To load a module run `loadM("<PROJECT>" -> "<MODULE>")` (for example, loadM("cats" -> "cats-core")). To use `loadM` method you need to have it in `predef.sc` file. Simply run following to have the proper predefs created: 
 
-{% highlight scala %}
-import ammonite.ops._
-load.module(cwd / "modules" / "cats" / "cats-core.scala")
+{% highlight bash %}
+curl https://raw.githubusercontent.com/yeghishe/ammonite-modules/master/predef.sc > ~/.ammonite/predef.sc
 {% endhighlight %}
 
-This is it, module is loaded and ready to use now. To make it even simpler let's go ahead and add this to your Ammonite predefs (`~/.ammonite/predef.scala`): 
-{% highlight scala %}
-import ammonite.ops._
-
-def loadM(module: (String, String)): Unit =
-  load.module(cwd / "modules" / module._1 / s"${module._2}.scala")
-{% endhighlight %}
-
-Having this we can simple load a module by running:`loadM("cats" -> "cats-core")`.
+You can start `amm` in `ammonite-modules` directory to laod a module or have `AMMONITE_MODULES` environment variable to point to the directory where you checked out `ammonite-modules`. Environemt variable will give more flexibility.
 
 Modules don't stop by just loading needed dependencies and importing classes. Each module can also do a reasonable setup for the project. For example, `akka-actor` may want to create an implicit actor system, `akka-http` and `akka-stream` may want to create implicit actor system and materializer, etc. You get the idea.
 
@@ -87,11 +78,10 @@ Hope others will find it helpful and use it. Also see the next section if you wo
 ## How to contribute
 
 * Each now project should have it's sub directory under `modules` folder and at least one scala file in it. See above how modules are named.
-* `Versions` case object in `versions.scala` file should include a public val for the project with latest version.
+* `Versions` case object in `Base.sc` file should include a public val for the project with latest version.
 * Add those three lines to the top of the file:
   {% highlight scala %}
-  import ammonite.ops._
-  load.module(cwd / "versions.scala")
+  interp.load.module(wd / "Base.sc")
   @
   {% endhighlight %}
 * Send pull requests, be it a bug fix, improvement, upgrading a version to the latest or adding more modules. All pull requests are welcome.
