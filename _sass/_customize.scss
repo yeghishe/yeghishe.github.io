@@ -230,3 +230,19 @@ main > ul.pager {
     padding: 0 10px;
   }
 }
+
+.call-actions {
+  margin: 30px auto 60px auto;
+  width: 360px;
+
+  .btn {
+    color: #f9f9f9;
+    background: #43A047;
+    margin: 0 15px 0 0;
+  }
+
+  em {
+    margin: 0 10px 0 0;
+  }
+}
+
