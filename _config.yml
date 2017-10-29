@@ -26,7 +26,7 @@ host: 0.0.0.0
 port: 9003
 
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md', 'tmuxinator.yml']
-gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jekyll-assets]
+plugins: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jekyll-assets]
 
 defaults:
   -
