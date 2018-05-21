@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Continuous Integration For Node Projects</title>
+  <meta name="description" content="A while ago I wrote a post about continuous integration with Jenkins for scalaprojects and I thought I would do one for node developers also. Make sure toche...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2015/08/14/continuous-integration-for-node-projects.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">Continuous Integration For Node Projects</h1>
+    <h3 class="post-details">
+      <time datetime="2015-08-14T00:00:00-07:00" itemprop="datePublished">Aug 14, 2015</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A while ago I wrote a post about continuous integration with Jenkins for scala
+projects and I thought I would do one for node developers also. Make sure to
+check out my other posts about how to write your gulp files since we’ll heavily
+really on those gulp tasks. I will put the links at the end of this post.
+So what is continuous integration, at the very high level it’s about hey is
+the code in a good state, no matter by how many people code is being updated,
+how often code is being changed or of how many building blocks project consists of.
+When you start working on a feature you’re gonna branch of mainline and start
+introducing changes. At some point when you find things are broken now you have
+to spend time to see if it’s because of your changes or project was already in
+a bad state. And when you find out that it was already in a bad state you
+would want to start tracing. A who introduced the breaking changes and B when.
+So to avoid the head each and frustration what you really want to know is
+if project is in a good state before you even start working on it.
+One option would be to compile the code before you start changing it.
+But if code compiles is it enough? Oh you you also wanna know if unit tests are
+passing. But is this enough? Check for compiler warnings? Style violations?
+Code coverage? What if you run code coverage and it shows that it’s 85%,
+does it mean everything is good, what if code coverage was 95% last week and
+code without proper code coverage got committed and code coverage dropped
+(do you remember what code coverage was last week, can you even find
+out without going back in commits and running coverage reports on those commits.) are you sure
+you want to introduce your changes on top of those changes?
+Let’s make it even more complex, what if the project consists of many other
+projects and the project you’re working on brings all those dependencies
+tougher. Maybe you should checkout all those dependency projects
+and see if those are in a good state also.
+Let’s make it even more complex, what if the project isn’t just set of
+projects that get bundled into one big project.
+What if the whole code base consists of many micro services that talk to each other
+via some form of PRC. OK maybe you can manage to do all this to know if code is
+in a good state before you introduce your changes what about the point B I
+brought earlier about when code broke, because longer it was in that states
+longer it’s gonna take to trace the breaking change and longer to fix.
+Can you go and check every single project every time someone makes a commit
+to make sure that commit is good? Well actually you can, you just need a
+build server. So all those points I was bringing was about whatever your
+integration is it should be continuous and it’s continuous if it runs after
+somebody changes something (or maybe before is a better option?☺ I’ll get
+to this later.)</p>
+
+<!--more-->
+
+<p>This should cover what the continuous part is but what about integration,
+what is it actually? I would define it as pipeline of checks that run one
+after another and if one fails the whole thing fails if all pass then
+code is good. Now let’s cover what checks you want to do. You’re the best
+person to know what checks you need and what you wanna track. I will
+cover the most common ones, at least the ones that are relevant for
+Node projects. Also I would cover how to do it in Jenkins since
+Jenkins is my preferred build server but it should me mostly similar
+other the other ones.</p>
+
+<p>Before getting to what pipeline should be, let’s figure out what the node
+environment is gonna look like. One intuitive thing to do would be to install
+node, npm and all global packages in Jenkins box, provision it with Chef or
+even better, have a Jenkins docker image. There are few problems with this
+approach though. One is that every time you need a new global package you need to
+re-provision Jenkins instance or re-build the docker image. Other big problem
+is the versioning issue, one project may need one version of node or global packages
+and another project may need other version, we don’t want to be forced to
+upgrade all the project to latest versions in one day. What would be ideal is
+isolated node environments. Luckily Jenkins has NodeJS plugin. What it does it
+installs isolated node environments in Jenkins’s home directory.
+After installing it in <em>Configure System</em> add <em>NodeJs Installation</em> specify the
+version of node to use, global packages to install and give it a name.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/node_installation-9b4d9988084ee35e416fb8bb50ae7a23940eb42a435759971776756d2039f2a6.png" alt="node installation" /></p>
+
+<p>Later in job configuration, under <em>Build Environment</em> section, select
+<em>Provide Node &amp; npm bin/ folder to PATH</em> and pick the node installation you
+wanna use for that project.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/build_environment-2aee845c7f2a0426233d5e3af2af91945045a20530d98ec3097ee21a7dae4f3f.png" alt="build environment" /></p>
+
+<p>After this, we can provide the commands to execute for our build. This is how
+it’ll look like for library projects.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/build_execute_shell-0dd16cb7480de505e004f7afff46f2ec6b1e63e05cb7f35db5fd2daf35c266bb.png" alt="build execute shell" /></p>
+
+<p>Let’s dig deep to understand what we’re doing here. First we do <strong>npm install</strong>,
+so if a commit has a new dependency or upgraded a dependency we’ll have it
+installed. Next we run <strong>gulp build</strong>, which does all the heavy lifting.
+It will lint the code, test it, generate coverage report, and compile
+CoffeeScript to JavaScript. I’m passing <em>JUNIT_REPORT_PATH</em> and
+<em>JUNIT_REPORT_STACK</em> environment variables to generate jUnit xml file, which
+we’ll use little later to generate graphs and reports. Next I run <em>gulp lint</em>
+task on it’s own, setting <em>JENKINS</em> environment variable so my gulp script knows
+that it’s running in Jenkins and it needs to generate checkstyle xml. The
+reason I’m running it separately and piping it to a file is because the gulp
+plugin I’m using for CoffeeScript linting outputs checkstyle xml on the console
+and the easiest way to get it into an xml file and let Jenkins’s checkstyle
+plugin know about it is to pipe it to a file.
+After the build succeeds I run <strong>npm publish</strong> to publish my npm and run
+<strong>gulp version</strong>, store it in <em>build.properties</em> which I’m gonna inject into
+Jenkins environment and tag the git commit with that version later.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/inject_environment_variables-952c1dfe2893ba33475aed2d9e5453f333ec60e806ef19ae45562e390ad28e27.png" alt="inject environment variables" /></p>
+
+<p>At this point build is done. What we have is report files that we’re gonna
+use to generate graphs and reports. We also published the npm so let’s also tag
+the commit with same version. And at the end send slack and email notifications.</p>
+
+<h1 id="checkstyle">Checkstyle</h1>
+
+<p>In our build we ran <em>gulp lint</em> and stored the output in
+<em>build/checkstyle-report-coffee.xml</em> so let’s point checkstyle plugin to it:</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/checkstyle-11f7d342527a0cf31067d14a48aaf31dee9413cbe180a0a4648e60428b6e38ca.png" alt="checkstyle" /></p>
+
+<p>What we’ll get is nice report pages where we can drill down to see what the
+warnings and errors are, in which files, line numbers and event see the line of
+code. We’ll get nice summery on job page, also trend graph.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/checkstyle_graph-44f2b7e604eda9c70e1adeb5a9ce9ec8634df31449552c53960f606377580d60.png" alt="checkstyle graph" /></p>
+
+<h2 id="open-tasks">Open tasks</h2>
+
+<p>Another thing that would be helpful is to know if there are open tasks in
+project and if there are, what those are. Jenkins has a way to detect
+tags like TODO, FIXME and others. It scans the code to find those, let’s
+configure it. Notice that I’m excluding <em>node_modules</em> to not count open tasks
+in dependency modules.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/open_tasks-dc29ff5297246d4a6b1b485a59072864f05568b5d2a2cff0ad6e0806684f6231.png" alt="open tasks" /></p>
+
+<p>What we’ll get is a nice reports and trend graph on our job page.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/open_tasks_graph-22639c92d78ca10f83a4ac77bee89f0332100d5469e6d800e3f9afabc5728107.png" alt="open tasks graph" /></p>
+
+<h2 id="unit-tests">Unit tests</h2>
+
+<p>In our build script we put <em>JUNIT_REPORT_PATH=build/test-report.xml</em> so our
+jUnit xml reports file are in that file, let’s just point jenkins to it.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/unit_tests-b050c07315806e5abc3e2f2f74cfcd4f7e8e1b40cb9acb2edf1535a12dd2ec44.png" alt="unit tests" /></p>
+
+<p>What we’ll get is a nice reports and trend graph on our job page.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/unit_tests_graph-79b143197f5bcedbbfbef98601e488e381d3fdde92199cf69069155b7f92c9cd.png" alt="unit tests graph" /></p>
+
+<h2 id="code-coverage">Code coverage</h2>
+
+<p>When unit testes are passing it’s still not enough we want to measure what
+the code coverage is and of course find code paths that are never being hit
+from a unit tests. If you look in my gulp files you’ll see that it generates
+cobertura reports also (in <em>build/coverage/cobertura-coverage.xml</em> file.)
+So let’s use it.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/cobertura-5282522d6b975fa68ef0a63a052c3221b80e695e4a4a0033b2924549b6bbffe6.png" alt="cobertura" /></p>
+
+<p>What we’ll get is a nice reports and trend graph on our job page.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/cobertura_graph-04b6f40ab0c83690c180df196ff74220b6111210a71791dbc625153e60e16d6e.png" alt="cobertura graph" /></p>
+
+<h2 id="output-of-the-build">Output of the build</h2>
+
+<p>We define build to be a pipeline of checks that the code goes through
+every time there is a commit. We torture every single commit to go through this
+pipeline and we say if build passes commit is good. So what is the output of the
+build? Also we only deploy good changes, right? The output of a good build would
+be the artifacts. We worked really hard to make sure that code is good by running
+series of checks on it and we better keep those artifacts for deployment. Since
+this one project is a library project the artifact is the npm package and I’m
+publishing it to my npm repository (in may instance nexus, you may use npmjs.)
+In case of server apps artifact can be a docker image job will build and push to
+docker registry. For other type of projects zip file can be good enough, just
+version it and put on S3 or something.</p>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>And since every good commit produces an artifact (in this case npm package is
+the artifact) we should talk about versions. One thing that would be good if
+we could link a specific version of an artifact to source code. A good way
+to do this is to create a tag on commit when we build the artifact. We already
+have the version in <em>package.json</em>, I defined <em>version</em> gulp task to get it and
+was doing some serious gymnastics in build script to get it into <em>VERSION</em>
+environment variable. I would just use Git publisher functionality of Jenkins
+to create a git tag with that version.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/git_tag-a71bf3ead065563b8fab7ca6f93627c1add384217fb1c74defc113627144a697.png" alt="git tag" /></p>
+
+<h1 id="notifications">Notifications</h1>
+
+<p>So build pipeline is there, now every time there is a commit in source control
+build will trigger and it will either fail or pass. Either way we get instant
+feedback which was one of the main problems we wanted to solve. You can get notifications
+when job stars, fails or succeeds. I generally don’t care to be notified when a
+job succeeds unless it’s deploy job or something (which I won’t be covering in
+this post.) but I absolutely care to know when a build job is failing.
+You can do pretty much all types of notifications: Email, Slack, Hipchat, IRC,
+IM whatever you’re using, Jenkins has plugins for all of those. I personally
+like to send an email out when a job fails and put a message in a Slack room
+when a job starts or finishes.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/email-11e9fd79b5468b35f1b2976a957f581ba97a6a3133134a4b1faae3b407eb9e54.png" alt="email" /></p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/slack1-91aab41f2d839e167f7ab26817ceaf99833244f4cf203b6c9e7840b69b939763.png" alt="slack" /></p>
+
+<p>And include Slack notifications at post build step at the bottom of job
+configuration.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/slack2-59610a3eab6186005fb4578e611b7d4f0fada0af75084930067c10761f4a9b3a.png" alt="slack" /></p>
+
+<h2 id="pull-requests">Pull requests</h2>
+
+<p>Remember I said it would be better to know if a commit is good before it even
+gets to mainline. With the setup mentioned so far when a commit gets to master
+build will trigger and if it’s bad job will fail. To not allow bad code
+to even get to master at first place we need to run integration on it before merging it.
+We never merge a branch when you do code review and identify that it needs
+more work, right? But what you can’t tell from just code reviewing is if it
+compiles, unit tests are passing, what is code coverage after the change, etc.
+And do we even want to code review a change if build will fail for it?
+What we need to do is to have a magical way that when we go to review a pull
+request somehow it has a flag on it saying build is passing for it or no.
+There is a Jenkins plugin for building pull requests also, it will run the
+build, and comment github pull request.</p>
+
+<p><img src="/assets/posts/continuous-integration-for-node-projects/pr_build-31f5405936bfe01d2a0b9aaa5b9d1db0c51ed9572560839ab2063cc290030a7a.png" alt="pull request comment" /></p>
+
+<p>To get this working all you need to do is to create another job that instead of
+building master will build pull requests. For this job there are few things
+we don’t actually need. We don’t care do generate scala docs for this type
+of builds, version or publish the artifacts, so make sure to exclude those steps
+from pull request builder jobs.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>Let’s see what we got. Every time there is a commit build will start
+immediately and we’ll get instant feedback whether build passes or fails. If
+build passes we know that all checks we defined are good for the commit.
+We create tags for each version in git, we publish artifacts for deployment or
+referencing from other projects.
+Other than those we get lot of nice features on Jenkins dashboard.</p>
+
+<ul>
+  <li>We can see the status of the build.</li>
+  <li>See the change log with commit messages, committers and links to github.</li>
+  <li>We can browser the workspace.</li>
+  <li>Start a build.</li>
+  <li>Navigate to github page of the project.</li>
+  <li>See detailed reports for checkstyle or other static analysis warnings.</li>
+  <li>Navigate to scala docs.</li>
+  <li>See code full coverage reports with percentages, which lines are covered which
+ones aren’t, classes, packages.</li>
+</ul>
+
+<p>Make sure to also check out my other posts about gulp files and how to run node
+apps in docker:</p>
+
+<ul>
+  <li><a href="/2015/08/13/my-gulp-files.html">My Gulp Files</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-library.html">My Gulp Files: Library Projects</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-rest-api.html">My Gulp Files: Rest Api Projects</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-ionic-app.html">My Gulp Files: Ionic App Projects</a></li>
+  <li><a href="/2015/08/13/how-to-run-node-apps-in-docker.html">How To Run Node Apps In Docker</a></li>
+</ul>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

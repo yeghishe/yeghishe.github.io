@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Methods Scalaz Adds To Standard Classes - Integer, String and Boolean</title>
+  <meta name="description" content="In my previous article about Semigroup, Monoid, Equal, Order, Enumand Show.  I covered what those are, what method they have and what derivedand syntax sugar...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2015/07/13/scalaz-methods-scalaz-adds-to-standard-classes-integer-string-boolean.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">Methods Scalaz Adds To Standard Classes - Integer, String and Boolean</h1>
+    <h3 class="post-details">
+      <time datetime="2015-07-13T00:00:00-07:00" itemprop="datePublished">Jul 13, 2015</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>In my previous article about <em>Semigroup</em>, <em>Monoid</em>, <em>Equal</em>, <em>Order</em>, <em>Enum</em>
+and <em>Show</em>.  I covered what those are, what method they have and what derived
+and syntax sugar methods scalaz bring for them. Also I showed that there are
+implicit implementations of those for scala standard classes that once are
+brought into the scope you’ll have access to those. In this article I’m gonna
+show those methods in action for <em>integer</em>, <em>string</em> and <em>boolean</em>.</p>
+
+<!--more-->
+
+<h2 id="integer">Integer</h2>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">object</span> <span class="nc">OperationsIntSnippets</span> <span class="k">extends</span> <span class="nc">App</span> <span class="o">{</span>
+  <span class="k">import</span> <span class="nn">scalaz.std.anyVal.intInstance</span>
+  <span class="k">import</span> <span class="nn">scalaz.std.int._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.enum._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.monoid._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.show._</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;anyVal.intInstance is Monoid, Enum (Enum is also Order and Order is Equal), Show&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="n">heaviside</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; heaviside(1) &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="n">heaviside</span><span class="o">(-</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; heaviside(-1) &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;MonoidOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">⊹</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 ⊹ 1 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">⊹</span> <span class="o">∅,</span> <span class="s">&quot;&quot;&quot; 1 ⊹ ∅ &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;EnumOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mf">1.</span><span class="n">succ</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1.succ &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">-+-</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 -+- 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mf">1.</span><span class="n">pred</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1.pred &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">---</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 -+- 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">|-&gt;</span> <span class="mi">10</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 |-&gt; 10 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">|--&gt;</span> <span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">10</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; 1 |--&gt; (2, 10) &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">println</span><span class="o">(</span><span class="mi">1</span> <span class="o">|--&gt;</span> <span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">11</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; 1 |--&gt; (2, 11) &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;ShowOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mf">1.</span><span class="n">shows</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1.show &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="mf">1.</span><span class="n">println</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;EqualOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">≟</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 ≟ 1 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">≠</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 ≠ 2 &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;OrderOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="n">lt</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 lt 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">2</span> <span class="n">lte</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 2 lte 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">2</span> <span class="n">gt</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 2 gt 1 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">2</span> <span class="n">gte</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 2 gte 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="o">?|?</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 ?|? 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="n">max</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 max 2 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="mi">1</span> <span class="n">min</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; 1 min 2 &quot;&quot;&quot;</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="the-output">The output</h3>
+<pre><code>                              anyVal.intInstance is Monoid, Enum (Enum is also Order and Order is Equal), Show
+ heaviside(1)                                               1
+ heaviside(-1)                                              0
+                              MonoidOps
+ 1 ⊹ 1                                                      2
+ 1 ⊹ ∅                                                      1
+                              EnumOps
+ 1.succ                                                     2
+ 1 -+- 2                                                    3
+ 1.pred                                                     0
+ 1 -+- 2                                                    -1
+ 1 |-&gt; 10                                                   List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+ 1 |--&gt; (2, 10)                                             List(1, 3, 5, 7, 9)
+(List(1, 3, 5, 7, 9, 11), 1 |--&gt; (2, 11) )
+                              ShowOps
+ 1.show                                                     1
+1
+                              EqualOps
+ 1 ≟ 1                                                      true
+ 1 ≠ 2                                                      true
+                              OrderOps
+ 1 lt 2                                                     false
+ 2 lte 2                                                    true
+ 2 gt 1                                                     true
+ 2 gte 2                                                    true
+ 1 ?|? 2                                                    LT
+ 1 max 2                                                    2
+ 1 min 2                                                    1
+</code></pre>
+
+<h2 id="string">String</h2>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">object</span> <span class="nc">OperationsStringSnippets</span> <span class="k">extends</span> <span class="nc">App</span> <span class="o">{</span>
+  <span class="k">import</span> <span class="nn">scalaz.std.string._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.monoid._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.order._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.show._</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.std.string._</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;stringInstance is Monoid, Show, Order (order is also Equal)&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;StringOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;code&quot;</span><span class="o">.</span><span class="n">plural</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; &quot;code&quot;.plural(0) &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;MonoidOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">⊹</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;a&quot; ⊹ &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;hello&quot;</span> <span class="o">⊹</span> <span class="o">∅,</span> <span class="s">&quot;&quot;&quot; &quot;hello&quot; ⊹ ∅ &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;ShowOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;abc&quot;</span><span class="o">.</span><span class="n">shows</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;abc&quot;.show &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="s">&quot;abc&quot;</span><span class="o">.</span><span class="n">println</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;EqualOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">≟</span> <span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;a&quot; ≟ &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">≠</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;a&quot; ≠ &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;OrderOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="n">lt</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;a&quot; lt &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;b&quot;</span> <span class="n">lte</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;b&quot; lte &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;b&quot;</span> <span class="n">gt</span> <span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;b&quot; gt &quot;a&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;b&quot;</span> <span class="n">gte</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;b&quot; gte &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;a&quot;</span> <span class="o">?|?</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; &quot;a&quot; ?|? &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="the-output-1">The output</h3>
+<pre><code>                              stringInstance is Monoid, Show, Order (order is also Equal)
+                              StringOps
+ "code".plural(0)                                           codes
+                              MonoidOps
+ "a" ⊹ "b"                                                  ab
+ "hello" ⊹ ∅                                                hello
+                              ShowOps
+ "abc".show                                                 "abc"
+"abc"
+                              EqualOps
+ "a" ≟ "b"                                                  true
+ "a" ≠ "b"                                                  true
+                              OrderOps
+ "a" lt "b"                                                 true
+ "b" lte "b"                                                true
+ "b" gt "a"                                                 true
+ "b" gte "b"                                                true
+ "a" ?|? "b"                                                LT
+</code></pre>
+
+<h2 id="boolean">Boolean</h2>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">object</span> <span class="nc">OperationsBooleanSnippets</span> <span class="k">extends</span> <span class="nc">App</span> <span class="o">{</span>
+  <span class="k">import</span> <span class="nn">scalaz.syntax.std.boolean._</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;StringOps&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">∧</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ∧ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">∧</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ∧ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">∧</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ∧ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">∧</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ∧ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">∨</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ∨ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">∨</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ∨ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">∨</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ∨ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">∨</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ∨ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">!||</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true !|| true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">!||</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true !|| false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">!||</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false !|| true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">!||</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false !|| false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">!&amp;&amp;</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true !&amp;&amp; true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">!&amp;&amp;</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true !&amp;&amp; false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">!&amp;&amp;</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false !&amp;&amp; true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">!&amp;&amp;</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false !&amp;&amp; false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">--&gt;</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true --&gt; true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">--&gt;</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true --&gt; false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">--&gt;</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false --&gt; true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">--&gt;</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false --&gt; false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">&lt;--</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true &lt;-- true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">&lt;--</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true &lt;-- false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">&lt;--</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false &lt;-- true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">&lt;--</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false &lt;-- false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">&lt;--</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true &lt;-- true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">&lt;--</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true &lt;-- false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">&lt;--</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false &lt;-- true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">&lt;--</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false &lt;-- false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇐</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇐ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇐</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇐ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇐</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇐ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇐</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇐ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇐</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇐ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇐</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇐ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇐</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇐ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇐</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇐ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇏</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇏ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇏</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇏ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇏</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇏ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇏</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇏ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇍</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇍ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">⇍</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ⇍ false &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇍</span> <span class="kc">true</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇍ true &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">⇍</span> <span class="kc">false</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ⇍ false &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="kc">true</span><span class="o">.</span><span class="n">when</span><span class="o">(</span><span class="n">println</span><span class="o">(</span><span class="s">&quot;when&quot;</span><span class="o">))</span>
+  <span class="kc">false</span><span class="o">.</span><span class="n">unless</span><span class="o">(</span><span class="n">println</span><span class="o">(</span><span class="s">&quot;unless&quot;</span><span class="o">))</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; true.fold(&quot;a&quot;, &quot;b&quot;) &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span><span class="o">.</span><span class="n">fold</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;b&quot;</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; false.fold(&quot;a&quot;, &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">?</span> <span class="s">&quot;a&quot;</span> <span class="o">|</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ? &quot;a&quot; | &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">?</span> <span class="s">&quot;a&quot;</span> <span class="o">|</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ? &quot;a&quot; | &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span><span class="o">.</span><span class="n">option</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; false.option(1) &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">option</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; true.option(1) &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span><span class="o">.</span><span class="n">lazyOption</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; false.lazyOption(1) &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">lazyOption</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; true.lazyOption(1) &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="n">either</span> <span class="s">&quot;a&quot;</span> <span class="n">or</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false either &quot;a&quot; or &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="n">either</span> <span class="s">&quot;a&quot;</span> <span class="n">or</span> <span class="s">&quot;b&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true either &quot;a&quot; or &quot;b&quot; &quot;&quot;&quot;</span><span class="o">)</span>
+
+  <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">scalaz.std.anyVal.intInstance</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">??</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true ?? 1 &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">??</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false ?? 1 &quot;&quot;&quot;</span><span class="o">)</span>
+
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">!?</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true !? 1 &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">false</span> <span class="o">!?</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; false !? 1 &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="o">{</span>
+    <span class="n">display</span><span class="o">(</span><span class="s">&quot;anyVal.booleanInstance extends Enum[Boolean] with Show[Boolean]&quot;</span><span class="o">)</span>
+    <span class="k">import</span> <span class="nn">scalaz.std.anyVal.booleanInstance</span>
+    <span class="k">import</span> <span class="nn">scalaz.syntax.enum._</span>
+    <span class="n">display</span><span class="o">(</span><span class="s">&quot;EnumOps&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">succ</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true.succ &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">-+-</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true -+- 2 &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">pred</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true.pred &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span> <span class="o">---</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true -+- 2 &quot;&quot;&quot;</span><span class="o">)</span>
+
+    <span class="k">import</span> <span class="nn">scalaz.syntax.show._</span>
+    <span class="n">display</span><span class="o">(</span><span class="s">&quot;ShowOps&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="kc">true</span><span class="o">.</span><span class="n">shows</span><span class="o">,</span> <span class="s">&quot;&quot;&quot; true.show &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="kc">true</span><span class="o">.</span><span class="n">println</span>
+  <span class="o">}</span>
+
+  <span class="n">display</span><span class="o">(</span><span class="s">&quot;Boolean isn&#39;t Monoid but BooleanDisjunction and BooleanConjunction are&quot;</span><span class="o">)</span>
+
+  <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">scalaz.Tags.Conjunction</span>
+    <span class="k">import</span> <span class="nn">scalaz.std.anyVal.booleanConjunctionNewTypeInstance</span>
+    <span class="k">import</span> <span class="nn">scalaz.syntax.monoid._</span>
+
+    <span class="n">display</span><span class="o">(</span><span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Conjunction(true) ⊹ Conjunction(true) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Conjunction(true) ⊹ Conjunction(false) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Conjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Conjunction(false) ⊹ Conjunction(true) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Conjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Conjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Conjunction(true) ⊹ Conjunction(false) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Conjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="o">∅,</span> <span class="s">&quot;&quot;&quot; ∅[Conjunction] &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">scalaz.Tags.Disjunction</span>
+    <span class="k">import</span> <span class="nn">scalaz.std.anyVal.booleanDisjunctionNewTypeInstance</span>
+    <span class="k">import</span> <span class="nn">scalaz.syntax.monoid._</span>
+
+    <span class="n">display</span><span class="o">(</span><span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Disjunction(true) ⊹ Disjunction(true) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Disjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Disjunction(true) ⊹ Disjunction(false) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Disjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Disjunction(false) ⊹ Disjunction(true) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Disjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span> <span class="o">⊹</span> <span class="nc">Disjunction</span><span class="o">(</span><span class="kc">false</span><span class="o">),</span> <span class="s">&quot;&quot;&quot; Disjunction(true) ⊹ Disjunction(false) &quot;&quot;&quot;</span><span class="o">)</span>
+    <span class="n">display</span><span class="o">(</span><span class="nc">Disjunction</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">⊹</span> <span class="o">∅,</span> <span class="s">&quot;&quot;&quot; ∅[Disjunction] &quot;&quot;&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="the-output-2">The output</h3>
+<pre><code>                              StringOps
+ true ∧ true                                                true
+ true ∧ false                                               false
+ false ∧ true                                               false
+ false ∧ false                                              false
+ true ∨ true                                                true
+ true ∨ false                                               true
+ false ∨ true                                               true
+ false ∨ false                                              false
+ true !|| true                                              false
+ true !|| false                                             false
+ false !|| true                                             false
+ false !|| false                                            true
+ true !&amp;&amp; true                                              false
+ true !&amp;&amp; false                                             true
+ false !&amp;&amp; true                                             true
+ false !&amp;&amp; false                                            true
+ true --&gt; true                                              true
+ true --&gt; false                                             false
+ false --&gt; true                                             true
+ false --&gt; false                                            true
+ true &lt;-- true                                              true
+ true &lt;-- false                                             true
+ false &lt;-- true                                             false
+ false &lt;-- false                                            true
+ true &lt;-- true                                              true
+ true &lt;-- false                                             true
+ false &lt;-- true                                             false
+ false &lt;-- false                                            true
+ true ⇐ true                                                true
+ true ⇐ false                                               true
+ false ⇐ true                                               false
+ false ⇐ false                                              true
+ true ⇐ true                                                true
+ true ⇐ false                                               true
+ false ⇐ true                                               false
+ false ⇐ false                                              true
+ true ⇏ true                                                false
+ true ⇏ false                                               true
+ false ⇏ true                                               false
+ false ⇏ false                                              false
+ true ⇍ true                                                false
+ true ⇍ false                                               false
+ false ⇍ true                                               true
+ false ⇍ false                                              false
+when
+unless
+ true.fold("a", "b")                                        a
+ false.fold("a", "b"                                        b
+ false ? "a" | "b"                                          b
+ true ? "a" | "b"                                           a
+ false.option(1)                                            None
+ true.option(1)                                             Some(1)
+ false.lazyOption(1)                                        LazyNone
+ true.lazyOption(1)                                         LazySome(&lt;function0&gt;)
+ false either "a" or "b"                                    -\/(b)
+ true either "a" or "b"                                     \/-(a)
+ true ?? 1                                                  1
+ false ?? 1                                                 0
+ true !? 1                                                  0
+ false !? 1                                                 1
+                              anyVal.booleanInstance extends Enum[Boolean] with Show[Boolean]
+                              EnumOps
+ true.succ                                                  false
+ true -+- 2                                                 true
+ true.pred                                                  false
+ true -+- 2                                                 true
+                              ShowOps
+ true.show                                                  true
+true
+                              Boolean isn't Monoid but BooleanDisjunction and BooleanConjunction are
+ Conjunction(true) ⊹ Conjunction(true)                      true
+ Conjunction(true) ⊹ Conjunction(false)                     false
+ Conjunction(false) ⊹ Conjunction(true)                     false
+ Conjunction(true) ⊹ Conjunction(false)                     false
+ ∅[Conjunction]                                             true
+ Disjunction(true) ⊹ Disjunction(true)                      true
+ Disjunction(true) ⊹ Disjunction(false)                     true
+ Disjunction(false) ⊹ Disjunction(true)                     true
+ Disjunction(true) ⊹ Disjunction(false)                     false
+ ∅[Disjunction]                                             true
+</code></pre>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

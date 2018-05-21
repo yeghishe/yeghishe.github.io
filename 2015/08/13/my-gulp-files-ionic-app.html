@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>My Gulp Files&amp;#58; Ionic App Projects</title>
+  <meta name="description" content="For Ionic projects also I use CoffeeScript, Sass, Jade although ionic generatesthe project in JavaScript and Html. Here we have front-end components,compilat...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2015/08/13/my-gulp-files-ionic-app.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">My Gulp Files&#58; Ionic App Projects</h1>
+    <h3 class="post-details">
+      <time datetime="2015-08-13T00:00:00-07:00" itemprop="datePublished">Aug 13, 2015</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For Ionic projects also I use CoffeeScript, Sass, Jade although ionic generates
+the project in JavaScript and Html. Here we have front-end components,
+compilation, browser testing, live reload, and all that goodness. Here we do
+need to compile CoffeScript to JavaScript, Sass to Css and Jade to Html.
+Another thing that needs to be solved since browser will run JavaScript, Css
+and html instead of CoffeScript, Jade, Sass so debugging will be really
+challenging. To solved that problem I generate source map files. I also use
+CoffeScript for my gulpfile since it makes it much more clean and compact.
+Some people who do that like to also create <em>gulpfile.js</em> file with</p>
+
+<!--more-->
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;coffee-script/register&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gulpfile.coffee&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>as a way to load gulpfile. I prefer not to do that to not have that extra build
+file and confusion why there are two gulp files one with js extension other
+with coffee extensions, is JavaScript file complied version of coffee script,
+etc. Gulp can figure out that it needs to <em>gulpfile.coffee</em> if you have
+<em>coffee-script</em> module in <em>node_modules</em>. So I just add it to my dev dependencies
+(It does mean though that I have to live with npm warning that coffee script
+should be installed globally).</p>
+
+<noscript><pre>del     = require &#39;del&#39;
+gulp    = require &#39;gulp&#39;
+pkg     = require &#39;./package.json&#39;
+$       = require(&#39;gulp-load-plugins&#39;) lazy: false
+paths   =
+  scssFiles:  [
+    &#39;./app/styles/ionic.app.scss&#39;
+    &#39;./app/styles/main.scss&#39;
+  ]
+  coffeeFiles: [
+    &#39;./app/scripts/app.coffee&#39;,
+    &#39;./app/scripts/run.coffee&#39;,
+    &#39;./app/scripts/config.coffee&#39;,
+    &#39;./app/scripts/routes.coffee&#39;,
+    &#39;./app/scripts/**/*.coffee&#39;
+  ]
+  jadeFiles:   [&#39;./app/views/**/*.jade&#39;]
+  imgFiles: [&#39;./app/img/*&#39;]
+  jsFiles: [&#39;./app/scripts/*.js&#39;]
+  htmlFiles: [&#39;./app/index.html&#39;]
+  generagedFiles: [&#39;./www/{css,img,js,templates}/&#39;, &#39;./www/index.html&#39;, &#39;./build/&#39;]
+  buildDir: &#39;./build/&#39;
+
+gulp.task &#39;version&#39;, -&gt;
+  console.log pkg.version
+
+gulp.task &#39;clean&#39;, (cb) -&gt;
+  del paths.generagedFiles, cb
+
+gulp.task &#39;lint&#39;, -&gt;
+  is_jenkins = process.env.JENKINS is &#39;true&#39;
+  gulp.src paths.coffeeFiles
+    .pipe $.coffeelint()
+    .pipe $.coffeelint.reporter(
+      if is_jenkins then &#39;checkstyle&#39; else &#39;coffeelint-stylish&#39;
+    )
+    .pipe $.coffee(bare: false).on(&#39;error&#39;, $.util.log)
+    .pipe $.jshint(&#39;.jshintrc&#39;)
+    .pipe(
+      if is_jenkins
+        $.jshint.reporter(&#39;gulp-checkstyle-jenkins-reporter&#39;, filename: paths.buildDir + &#39;checkstyle-result.xml&#39;)
+      else
+        $.jshint.reporter(&#39;jshint-stylish&#39;)
+    )
+
+gulp.task &#39;copy&#39;, -&gt;
+  gulp.src paths.htmlFiles
+    .pipe gulp.dest &#39;./www&#39;
+  gulp.src paths.imgFiles
+    .pipe gulp.dest &#39;./www/img&#39;
+  gulp.src paths.jsFiles
+    .pipe gulp.dest &#39;./www/js&#39;
+
+gulp.task &#39;compile:coffee&#39;, -&gt;
+  gulp.src paths.coffeeFiles
+    .pipe $.sourcemaps.init()
+    .pipe $.ngClassify(appName: pkg.name)
+    .pipe $.coffee(bare: false).on(&#39;error&#39;, $.util.log)
+    .pipe $.concat(&#39;app.js&#39;)
+    .pipe $.header(&quot;&#39;use strict&#39;;\n&quot;)
+    .pipe gulp.dest(&#39;./www/js&#39;)
+    .pipe $.uglify()
+    .pipe $.rename(extname: &#39;.min.js&#39;)
+    .pipe $.sourcemaps.write(&#39;.&#39;)
+    .pipe gulp.dest(&#39;./www/js&#39;)
+    .pipe $.size(showFiles: true)
+
+gulp.task &#39;compile:sass&#39;, -&gt;
+  gulp.src paths.scssFiles
+    .pipe $.sourcemaps.init()
+    .pipe $.sass().on(&#39;error&#39;, $.util.log)
+    .pipe $.concat(&#39;style.css&#39;)
+    .pipe gulp.dest(&#39;./www/css&#39;)
+    .pipe $.minifyCss(keepSpecialComments: 0)
+    .pipe $.rename(extname: &#39;.min.css&#39;)
+    .pipe $.sourcemaps.write(&#39;.&#39;)
+    .pipe gulp.dest(&#39;./www/css/&#39;)
+    .pipe $.size(showFiles: true)
+
+gulp.task &#39;compile:jade&#39;, -&gt;
+  gulp.src paths.jadeFiles
+    .pipe $.jade()
+    #.pipe gulp.dest(&#39;./www/templates&#39;)
+    .pipe $.angularTemplatecache(&#39;templates.js&#39;, {standalone:true, root: &#39;templates/&#39;} )
+    .pipe gulp.dest(&#39;./www/js&#39;)
+    .pipe $.size(showFiles: true)
+
+gulp.task &#39;watch&#39;, -&gt;
+  gulp.watch paths.scssFiles, gulp.series(&#39;compile:sass&#39;)
+  gulp.watch paths.coffeeFiles, gulp.series(&#39;compile:coffee&#39;)
+  gulp.watch paths.jadeFiles, gulp.series(&#39;compile:jade&#39;)
+  gulp.watch paths.imgFiles.concat(paths.jsFiles, paths.htmlFiles), gulp.series(&#39;copy&#39;)
+
+gulp.task &#39;build&#39;, gulp.series &#39;clean&#39;, gulp.parallel(&#39;lint&#39;, &#39;copy&#39;, &#39;compile:sass&#39;, &#39;compile:coffee&#39;, &#39;compile:jade&#39;)
+gulp.task &#39;default&#39;, gulp.parallel(&#39;build&#39;, &#39;watch&#39;)</pre></noscript>
+<script src="https://gist.github.com/yeghishe/1bb6ed2edb4a1c3b4ded.js"> </script>
+
+<p>Going from top to bottom, first task is <strong>version</strong>, it just gets the package
+version from <em>package.json</em> file and outputs it to the console. I use this in Jenkins.</p>
+
+<p>Next comes <strong>clean</strong>. It just removes build generated files, for next build to start
+from a clean slate.</p>
+
+<p>Next comes <strong>lint</strong>. I like to lint my code and know about issues with my code sooner
+than later. Based on Jenkins environment variable I decide which report format to use.
+During development I like to use <em>stylish</em> and for Jenkins, <em>checkstyle</em> to generate
+checkstyle xml and report it nicely in Jenkins using checkstyle plugin. Notice
+that I’m linting both CoffeeScript and JavaScript code. Why? because
+CoffeeScript code is what I write and JavaScript code is what I publish.</p>
+
+<p>Next comes <strong>copy</strong>. It copies static files like images, JavaScript code that I
+didn’t write and don’t want to convert to CoffeeScript, <em>index.html</em> which I
+chose not to convert to Jade because of many reasons, etc.</p>
+
+<p>Next come <strong>compile:coffee</strong>, <strong>compile:sass</strong>, <strong>compile:jade</strong>. Those compile
+CoffeeScript code to JavaScript, Sass to Css and Jade to html. I use
+<em>ngClassify</em>, <em>uglify</em> and <em>sourcemaps</em> for JavaScript. <em>minifyCss</em> and
+<em>sourcemaps</em> for Css. For Templates I use <em>angularTemplatecache</em>. Notice that
+I have piping html files down to <em>templates</em> directory commented out, in case I
+need to debug something with my templates I’ll uncomment it.</p>
+
+<p>Final three are <strong>watch</strong>, <strong>build</strong>, <strong>default</strong>. <em>build</em> is combo task that
+runs <em>clean</em>, <em>lint</em>, <em>copy</em> and <em>compile</em>. Notice that after <em>clean</em> everything
+ran in parallel because all those can be executed in parallel, so why not use
+those cors.  <em>watch</em> watches my files for changes and it triggers a new build
+automatically every time I make a change to my code. <em>default</em> task (which is
+triggered when you run <em>gulp</em> without passing any task) builds the projects and
+watches for file changes. This way I just type gulp and I’m ready to work on my
+project knowing that everything is good and every time I make a change it
+automatically will build my code.</p>
+
+<p>This is the build cycle for this type of projects. Artifact here can just be a
+zip file, you may just zip it up, and name with proper version and store
+somewhere. Deploy job will talk that zip with the right version, extract and
+upload to Ionic View, TestFlight, HockeyApp or whatever. Or just make it
+continuous and every time there is a commit upload the build.</p>
+
+<p>Make sure to also check my other gulp files out:</p>
+
+<ul>
+  <li><a href="/2015/08/13/my-gulp-files.html">My Gulp Files</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-library.html">My Gulp Files: Library Projects</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-rest-api.html">My Gulp Files: Rest Api Projects</a></li>
+</ul>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

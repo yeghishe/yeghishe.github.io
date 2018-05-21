@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Ammonite Modules</title>
+  <meta name="description" content="Ammonite is such a great project, especially Ammonite-REPL. It brings many great things to scala console: syntax highlighting, better editing, dynamically lo...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2016/06/05/ammonite-modules.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">Ammonite Modules</h1>
+    <h3 class="post-details">
+      <time datetime="2016-06-05T00:00:00-07:00" itemprop="datePublished">Jun 5, 2016</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Ammonite is such a great project, especially <a href="http://www.lihaoyi.com/Ammonite/#Ammonite-REPL" target="_blank">Ammonite-REPL</a>. It brings many great things to scala console: syntax highlighting, better editing, dynamically loading dependencies, loading scripts, etc. It comes very handy if you want to play with a some library without creating an sbt project. Or you want to try something out without necessarily loading IntelliJ. I happen to do it often and decided to start an open source project called <a href="https://github.com/yeghishe/ammonite-modules" target="_blank">ammonite-modules</a>. The idea is to have pre-defined modules you can load in Ammonite Repl. Modules will have all the dependencies needed at latest versions and do some basic setup.</p>
+
+<!--more-->
+
+<p>The structure of the project is simple:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"><span></span>├── base.sc
+├── modules
+│   ├── project1
+│   │   ├── project1-module1.sc
+│   │   ├── project1-module2.sc
+│   │   └── project1-module3.sc
+│   ├── project2
+│   │   ├── project2-module1.sc
+│   │   └── project2-module2.sc
+│   ├── project3
+│   │   └── project3.sc</code></pre></figure>
+
+<p><code>Base.sc</code> file contains all the versions (hopefully it will be maintained so all latest versions will be in master). Modules directory has all the modules. The idea here is that each project may have different modules and user chooses which module to load. For example this:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"><span></span>├── Base.sc
+├── modules
+│   ├── akka
+│   │   ├── akka-actor.sc
+│   │   ├── akka-http.sc
+│   │   └── akka-stream.sc
+│   ├── cats
+│   │   ├── cats-core.sc
+│   │   └── cats.sc
+│   ├── circe
+│   │   └── circe.sc</code></pre></figure>
+
+<p>Here use can load <code>akka-actor</code>, <code>akka-http</code>, <code>akka-stream</code>, etc. All three are different modules. Or user may want to load only <code>cats-core</code> vs <code>cats</code> (all cats projects). Or it can be a simple project with only one module, like <code>circe</code> in this example.</p>
+
+<p>To load a module run <code>loadM("&lt;PROJECT&gt;" -&gt; "&lt;MODULE&gt;")</code> (for example, loadM(“cats” -&gt; “cats-core”)). To use <code>loadM</code> method you need to have it in <code>predef.sc</code> file. Simply run following to have the proper predefs created:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>curl https://raw.githubusercontent.com/yeghishe/ammonite-modules/master/predef.sc &gt; ~/.ammonite/predef.sc</code></pre></figure>
+
+<p>You can start <code>amm</code> in <code>ammonite-modules</code> directory to laod a module or have <code>AMMONITE_MODULES</code> environment variable to point to the directory where you checked out <code>ammonite-modules</code>. Environemt variable will give more flexibility.</p>
+
+<p>Modules don’t stop by just loading needed dependencies and importing classes. Each module can also do a reasonable setup for the project. For example, <code>akka-actor</code> may want to create an implicit actor system, <code>akka-http</code> and <code>akka-stream</code> may want to create implicit actor system and materializer, etc. You get the idea.</p>
+
+<p>To demonstrate this let’s write an akka application right in Ammonite Repl. First things first, let’s load <code>akka-actor</code> module:</p>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="n">loadM</span><span class="o">(</span><span class="s">&quot;akka&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;akka-actor&quot;</span><span class="o">)</span></code></pre></figure>
+
+<p>Then let’s write this simple akka actor and start it:</p>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span><span class="k">class</span> <span class="nc">DemoActor</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="k">with</span> <span class="nc">ActorLogging</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Hello</span>
+
+  <span class="k">override</span> <span class="k">def</span> <span class="n">preStart</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">context.dispatcher</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">schedule</span><span class="o">(</span><span class="mi">1</span> <span class="n">second</span><span class="o">,</span> <span class="mi">1</span> <span class="n">second</span><span class="o">,</span> <span class="n">self</span><span class="o">,</span> <span class="nc">Hello</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="k">override</span> <span class="k">def</span> <span class="n">receive</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Hello</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello ammonite-modules&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">system</span><span class="o">.</span><span class="n">actorOf</span><span class="o">(</span><span class="nc">Props</span><span class="o">(</span><span class="k">new</span> <span class="nc">DemoActor</span><span class="o">),</span> <span class="s">&quot;demo&quot;</span><span class="o">)</span></code></pre></figure>
+
+<p>You should see <code>Hello ammonite-modules</code> message print every one second. Note that we didn’t create the actor system nor we imported <code>scala.concurrent.duration._</code> or any akka classes, <code>akka-actor</code> module has it predefined for us. In a production app you would want to keep the messages and props method for the actor in it’s companion object but to just play with akka this is good enough code.</p>
+
+<p>Hope others will find it helpful and use it. Also see the next section if you would like to contribute.</p>
+
+<h2 id="how-to-contribute">How to contribute</h2>
+
+<ul>
+  <li>Each now project should have it’s sub directory under <code>modules</code> folder and at least one scala file in it. See above how modules are named.</li>
+  <li><code>Versions</code> case object in <code>Base.sc</code> file should include a public val for the project with latest version.</li>
+  <li>Add those three lines to the top of the file:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span></span>  <span class="n">interp</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">module</span><span class="o">(</span><span class="n">wd</span> <span class="o">/</span> <span class="s">&quot;Base.sc&quot;</span><span class="o">)</span>
+  <span class="k">@</span>
+  </code></pre></figure>
+
+<ul>
+  <li>Send pull requests, be it a bug fix, improvement, upgrading a version to the latest or adding more modules. All pull requests are welcome.</li>
+</ul>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

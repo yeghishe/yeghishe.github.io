@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Running Akka Applications</title>
+  <meta name="description" content="With akka becoming more and more popular, akka kernel being deprecated,docker rocking the word, Typesafe releasing ConductR and more folksgetting to scala, I...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2015/06/24/running-akka-applications.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">Running Akka Applications</h1>
+    <h3 class="post-details">
+      <time datetime="2015-06-24T00:00:00-07:00" itemprop="datePublished">Jun 24, 2015</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>With <em>akka</em> becoming more and more popular, <em>akka kernel</em> being deprecated,
+<em>docker</em> rocking the word, <em>Typesafe</em> releasing <em>ConductR</em> and more folks
+getting to scala, I wanted to write a post about how to run akka applications.
+Akka applications aren’t servlet applications java developers are used to,
+normally those are main class applications in a jar file and have other jars as
+dependencies. So it’s no-brainer that we can just use java command and
+no container like tomcat or jetty is need. I will cover how to run in
+development while iterating on a task. How to run it in development and tunnel
+the port and let others point to your code before you even go to production
+or pre production environment and how to run it inside a docker container in
+production and pre production environments. Unforunatly I didn’t get hold of
+<em>ConductR</em> to try it myself, so I won’t be writing about it in
+this post. Btw, most of this should be to relevant other scala/java main class
+applications not only <em>akka</em> and <em>akka http</em> applications.</p>
+
+<!--more-->
+
+<h2 id="how-to-run-in-development">How to run in development</h2>
+
+<p>Since it’s development environment things are easier because we have the tools
+installed and those are making thing easier for us. The easiest thing to
+do would be to use <em>sbt run</em> command. sbt run is fine when I just want to bring
+my server up but while developing I always have sbt loaded, then I run comments
+there, be it compile, test, it:test, etc. What I want is to run it, and every
+time I go and add more code, come back to sbt and restart my app.
+This way I don’t have to reload sbt every time I just need to wait for compiler
+to compile the files I modified. This approach makes development much faster.
+The problem with sbt run (no matter if you’re running <em>run</em> target from sbt
+that’s loaded or running <em>sbt run</em> from terminal) is that in order for you to
+restart your running app you have to kill stb and load it again, which takes
+some time.</p>
+
+<p>You can also run your app using activator ui. When you make a change to
+your code it will restart your app.</p>
+
+<p>One sbt plugin I use is <em>sbt-revolver</em> from spray and it’s <em>reStart</em> is sure my
+favorite. Basically as I said I always have sbt running and when I need to start or
+restart my app I just run <em>reStart</em> command from sbt. I can exactue other sbt
+targets while it’s running since I still have my sbt shell avaliable, or stop it
+using <em>reStop</em>. <em>~reStart</em> also works if you prefer it to automaticly restart
+when you make a change.
+To configure <em>sbt-revolver</em> add <em>Revolver.settings</em> to your build file.</p>
+
+<p>Another good plugin is <em>sbt-native-packager</em>. You either stage or distribute
+your build. To stage it run <em>stage</em> command and it will
+create <em>target/universal/stage</em> folder in your project with <em>bin</em> and <em>lib</em>
+subdirectories. <em>bin</em> has bash and windows cmd files with your project name
+that will run your application. <em>lib</em> directory has all your dependency jars.
+You see where this is going? No one jar, fat jar, big jar business. We have
+clean and lightweight jar file with only things that needs to be in it.
+We can put in nexus (or whatever else you’re using), lib is clean and
+shows what the dependencies are with their versions. I like to use <em>stage</em> to
+create executable and use it to run my application when I’m doing the final
+testing before I push my change since this is the most production like version
+(well unless we’re using docker).  To distribute it you run <em>dist</em> command.
+It produces exactly what <em>stage</em> does but instead of making stage folder it
+creates a zip file with your application name and version. I never run it in
+development because in order for me to run my app I have to unzip it first,
+which is what stage is for. This is for CI server to run and store produces
+zip artifact on S3 (or whatever else you’re using).
+To configure <em>sbt-native-packager</em> add <em>enablePlugins(JavaAppPackaging)</em> to
+your build file.</p>
+
+<p>If you don’t need to iterate fast in development, you just need to run it
+and use it, you have all those options, sbt run, activator, reStart, stage,
+docker. Although I do recommend for final testing to stage and run the staged
+files or run docker container since this how your app is gonna run in next
+environments.</p>
+
+<h2 id="running-in-production-and-pre-production-environments">Running in production and pre production environments</h2>
+
+<p>We already know what we get when we run <em>dist</em> command from
+<em>sbt-native-packager</em>. We can just deploy it to all our environments, expend
+it and run the bash file (build once run it everywhere). This is one option.</p>
+
+<p>Better option is <em>Docker</em>. <em>sbt-native-packager</em> can help you generate
+<em>Dockerfile</em>, build and push your image.</p>
+
+<ul>
+  <li><em>docker:stage</em> will create <em>target/docker</em> folder with <em>Dockerfile</em>,
+executable, and dependency jars.</li>
+  <li><em>docker:publishLocal</em> will build a docker images with your application name and
+tag it with version you have in your sbt build file.</li>
+  <li><em>docker:publish</em>  will push docker image to <em>DockerHub</em> or your configured
+registry tagging it with the version in build file (This one you should
+run from your CI server).</li>
+</ul>
+
+<p>Now we’re treating docker images as our artifacts. We can pull the same
+artifact (docker image), and run it in all our environments. Again build once
+run it everywhere. If you’re using docker in production it’s a good idea to
+run your app in docker container locally for final testing instead of using
+<em>sbt stage</em>, since that’s the whole point of docker, you’re running the whole
+container, same that will run in production, not just your application.
+What you need to do is to run <em>docker:publishLocal</em> target to create the image
+locally. Then use <em>docker run</em>
+(<code>docker run -t -i --rm -p 9000:9000 yeghishe/running-akka-apps-sample:0.0.1 /bin/bash</code>).</p>
+
+<h2 id="sample-app">Sample app</h2>
+
+<p>To demo those options and to make it easier for folks to reference the
+configuration I created a sample akka http app based on my
+<em>minimal-scala-akka-http-seed</em> activator template (to create a project based
+on it do <code>activator new &lt;YOU PROJECT NAME&gt; minimal-scala-akka-http-seed</code>).
+It has activator already in it, has the plugins I mentioned in project
+directory and a simple service that returns the mandatory Hello World when doing
+get request on root path. I’ll be demonstrating all the options I talked about.
+After you have it running, you can validate it by hitting it with
+<code>curl localhost:9000</code> command.</p>
+
+<h3 id="sbt-run">sbt run</h3>
+<p>Execute <code>sbt run</code> from terminal or load sbt then exacute <em>run</em> target.</p>
+
+<h3 id="typesafe-activator">Typesafe activator</h3>
+<p>Execute <code>./activator ui</code> which will start a server (listening on port 8888
+by default) and open your browser pointing to it.
+Go to <em>Ran</em> tab and hit <em>Start</em> button.</p>
+
+<h3 id="sbt-revolver">sbt-revolver</h3>
+<p>Load sbt and execute <em>reStart</em> or <em>~reStart</em>.</p>
+
+<ul>
+  <li><em>reStart</em> starts or restarts the app.</li>
+  <li><em>reStop</em> stops the running app.</li>
+  <li><em>reStatus</em> shows if the app is running or it’s stopped.</li>
+</ul>
+
+<h3 id="sbt-native-packager-with-zip-packages">sbt-native-packager with zip packages</h3>
+<p>Execute <em>stage</em> target from sbt and run executable in
+<em>target/universal/stage/bin/</em> directory.</p>
+
+<h3 id="docker">Docker</h3>
+<p>I pushed a docker images for this sample app to my DockerHub account for your
+convinice. Just run <code>docker pull yeghishe/running-akka-apps-sample:latest</code>
+to bring down the lastest image.</p>
+
+<p>To start the container:</p>
+
+<pre><code>docker run -d -p 9000:9000 yeghishe/running-akka-apps-sample:latest
+</code></pre>
+
+<p>Or to run interactivly and automaticly remove the container when you stop it:</p>
+
+<pre><code>docker run -t -i --rm -p 9000:9000 yeghishe/running-akka-apps-sample:latest /bin/bash
+</code></pre>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

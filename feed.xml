@@ -1,30 +1,1071 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Yeghishe Piruzyan's blog</title>
+    <description>I'm a software engineer based in Los Angeles. I'll be blogging about interesting technologies and challenges I face that others may find helpful.
+</description>
+    <link>http://yeghishe.github.io/</link>
+    <atom:link href="http://yeghishe.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 20 May 2018 22:24:42 -0700</pubDate>
+    <lastBuildDate>Sun, 20 May 2018 22:24:42 -0700</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Moving My Activator Templates To Gitter8</title>
+        <description>&lt;p&gt;I had few activater templates for a while now that I use to start different types of Scala projects. I open sourced those and made available via Github and activator website. There was lots of traction from the community and since Activator is deprecated now I decided to take those and convert to Gitter8 templates so &lt;code&gt;sbt new&lt;/code&gt; can be used to start projects. The new templates work with sbt 1 and all the dependencies, including sbt plugins in the projects, are upgraded.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The old activator templates are still on my github and available for people who still use activator but new updates and patches will only be submitted to new g8 templates.&lt;/p&gt;
+
+&lt;h2 id=&quot;minimal-scala-lib-seed&quot;&gt;Minimal Scala Lib Seed&lt;/h2&gt;
+
+&lt;p&gt;To start a project run &lt;code&gt;sbt new yeghishe/minimal-scala-lib-seed.g8&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-lib-seed.g8&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-lib-seed&quot; target=&quot;_blank&quot;&gt;Old Activator template&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;minimal-scala-akka-seed&quot;&gt;Minimal Scala Akka Seed&lt;/h2&gt;
+
+&lt;p&gt;To start a project run &lt;code&gt;sbt new yeghishe/minimal-scala-akka-seed.g8&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-akka-seed.g8&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-akka-seed&quot; target=&quot;_blank&quot;&gt;Old Activator template&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;minimal-scala-akka-http-seed&quot;&gt;Minimal Scala Akka Http Seed&lt;/h2&gt;
+
+&lt;p&gt;To start a project run &lt;code&gt;sbt new yeghishe/minimal-scala-akka-http-seed.g8&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-akka-http-seed.g8&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/minimal-scala-akka-http-seed&quot; target=&quot;_blank&quot;&gt;Old Activator template&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;scala-aws-lambda-seed&quot;&gt;Scala AWS Lambda Seed&lt;/h2&gt;
+
+&lt;p&gt;To start a project run &lt;code&gt;sbt new yeghishe/scala-aws-lambda-seed.g8&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/scala-aws-lambda-seed.g8&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yeghishe/scala-aws-lambda-seed&quot; target=&quot;_blank&quot;&gt;Old Activator template&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have questions about any of those templates or need help upgrading to sbt 1, feel free to contact me here or in github.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 29 Oct 2017 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2017/10/29/moving-my-activator-templates-to-gitter8.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2017/10/29/moving-my-activator-templates-to-gitter8.html</guid>
+        
+        <category>scala</category>
+        
+        <category>opensource</category>
+        
+        <category>sbt</category>
+        
+        <category>activat</category>
+        
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Writing Aws Lambdas In Scala</title>
+        <description>&lt;p&gt;AWS Lambda supports writing handlers in Nodejs, Python and Java. The first two are really easy - if you don’t have any external dependencies and script is easy to write, you can even write your lambda in AWS console. However when it comes to Java, things get a little more complicated than that (not even talking about Scala yet.) So at the very least you’ll need to create a new project, know what jar dependencies to add for lambda, implement the handler method in a class that potentially implements some interface, know how to generate a deployment package (fat jar or a zip file for java projects), upload to S3 (since that jar would have a decent size), etc. If I want to implement my lambda in Scala now, I would have to deal with all those complexities for Java projects and more - such as more dependencies, how to write an actual Scala code (not Java in Scala syntax), interoperability, immutability, built in features like case classes, futures, etc. I thought it’s not fair for Scala developers and things can be much simpler (maybe not Nodejs simple) but at least it has to be simpler than doing in Java, since we all know Scala has more things to make developer’s job easier.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;So what if every time I need a lambda in Scala, I just generate a project that has all the dependencies that are needed, all the plumbing needed, a way to upload to S3 from SBT, etc? Luckily, this is a solved problem, I can just create an activator template and use the activator to generate a project from that template every time I need one.&lt;/p&gt;
+
+&lt;p&gt;The second issue would be interoperability. AWS expects a certain interface - if all that you are doing is primitives or using built in classes that amazon created for events (like S3, SNS, etc, see &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22aws-lambda-java-events%22&quot;&gt;aws-lambda-java-events&lt;/a&gt; jar), then it’s not a big problem, but if my lambda takes a JSON input and responds with a JSON output things get a little tricky.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
+
+&lt;p&gt;Let’s first see what AWS has for Java projects. From Amazon’s documentation, you can define a lambda like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Where our handler function would be &lt;code&gt;example.Hello::myHandler&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We can easy implement this in Scala as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;s&amp;quot;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Nothing special is needed. The reason is that &lt;code&gt;myHandler&lt;/code&gt; is taking &lt;code&gt;name: String&lt;/code&gt; parameter and returning a &lt;code&gt;String&lt;/code&gt;. Both are Java primitives and AWS understands it well.&lt;/p&gt;
+
+&lt;p&gt;In real life, things would be little more complicated. You may want your handler to take any JSON and respond with a primitive or a JSON. Let’s look at what they have for Java again:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.RequestHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloPojo&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RequestHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ResponseClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ResponseClass&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestClass&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greetingString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s, %s.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ResponseClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greetingString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Where &lt;code&gt;RequestClass&lt;/code&gt; and &lt;code&gt;ResponseClass&lt;/code&gt; are Java POJOs with beans (not including their definition here for brevity, see the &lt;a href=&quot;http://docs.aws.amazon.com/lambda/latest/dg/java-handler-io-type-pojo.html&quot; target=&quot;_blank&quot;&gt;documentation&lt;/a&gt; for the full implementation.) This also works out of the box because AWS is using Java beans for JSON serialization/deserialization. Our handler function here would be &lt;code&gt;example.HelloPojo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;How would we implement this in Scala? Before getting there, let’s ask ourselves how we would define handle method in plain Scala. Handler is a function that takes an input and the context, does some actions and returns an output. So the Scala way to define a handler will be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;R&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As long as we can deserialize input JSON into type T and serialize output R into JSON, we should be good. And the most natural way to represent those inputs and outputs in Scala would be to use case classes (if our input or output isn’t a primitive of course). There is a problem though, if we convert the POJO example to Scala and define &lt;code&gt;RequestClass&lt;/code&gt; and &lt;code&gt;ResponseClass&lt;/code&gt; as case classes it won’t work.  Why? let’s say we define our &lt;code&gt;RequestClass&lt;/code&gt; as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The issue is that since the JSON deserializer uses Java beans it would expect &lt;code&gt;RequestClass&lt;/code&gt; to have a default parameterless constructor. In our case class we know that we don’t have one. Scala compiler will generate a construct that takes firstName and lastName parameters and stores those in private variables. Hence, no default constructor there.&lt;/p&gt;
+
+&lt;p&gt;Back to were we started. We can implement those classes as plain classes instead of case classes, have a default constructor and define getters and setters. So we basically create a mutable class and we’ll be forced to pass it around in case we structure our code into multiple functions. Let’s stop right here, that’s not why we like to code in Scala, right?&lt;/p&gt;
+
+&lt;p&gt;Next option that AWS gives us is to have input as &lt;code&gt;InputStream&lt;/code&gt; and output as &lt;code&gt;OutputStream&lt;/code&gt;. It seems like a better alternative for us, since we’ll handle serialization/deserialization ourselves and in previous example we saw that the default serialization/deserialization was what got us into trouble in the first place. Let’s look at Java example from Amazon’s documentation again:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.OutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.RequestStreamHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.amazonaws.services.lambda.runtime.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RequestStreamHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;letter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;letter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;outputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;letter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;                                                       
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;http://docs.aws.amazon.com/lambda/latest/dg/java-handler-io-type-stream.html&quot; target=&quot;_blank&quot;&gt;documentation&lt;/a&gt;. The example basically converts the input text to uppercase, and the way to execute this is to specify &lt;code&gt;example.Hello&lt;/code&gt; as the handler (actually not sure that the handler method should be static there since class implements RequestStreamHandler).&lt;/p&gt;
+
+&lt;p&gt;Great, we’ll have to deal with Java’s streams now, and this on top of all the other things we have to take care of for Java projects. Quite painful when you just need to write “one function”.&lt;/p&gt;
+
+&lt;p&gt;Let’s get back to where we ideally wanted to end up:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;R&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So what if we can create generic methods that deserialize JSON from the input stream into an instance of type T, serialize an instance of type R into JSON, and send it to AWS in the output stream. Once we have that, then we can create helper methods that will handle all the complexity and pass the execution to our handler function.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Let’s see how far I got with it implementing the template.
+To generate a new project from the template, run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;activator new &amp;lt;YOUR PROJECT NAME&amp;gt; scala-aws-lambda-seed&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;handler-code&quot;&gt;Handler code&lt;/h3&gt;
+
+&lt;p&gt;In the generated project you’ll have &lt;code&gt;Main.scala&lt;/code&gt; file.
+For your convenience, there is &lt;code&gt;MySimpleHander&lt;/code&gt; object defined in case your function is just dealing with primitives:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MySimpleHander&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;s&amp;quot;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To execute this, you use &lt;code&gt;&amp;lt;YOUR PACKAGE&amp;gt;.MySimpleHander::handler&lt;/code&gt; as your handler for lambda.&lt;/p&gt;
+
+&lt;p&gt;It also generates &lt;code&gt;MyHandler&lt;/code&gt; class when you need to get JSON and respond with JSON:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyHandler&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Greeting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&amp;quot;Name is &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;nc&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&amp;quot;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To execute this, you use &lt;code&gt;&amp;lt;YOUR PACKAGE&amp;gt;.MyHander&lt;/code&gt; as your handler for lambda.
+Note that the handler class extends &lt;code&gt;Handler[T, R]&lt;/code&gt; abstract class. If your lambda doesn’t return anything, you can extend from &lt;code&gt;Handler[T, Unit]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It also won’t be uncommon to make a web call, talk to the DB and do some IO form your lambda code. So there would most likely be functions for those that return futures, and the handler would be some aggregation of those into another future. For this use, cases extend &lt;code&gt;FutureHandler[T, R]&lt;/code&gt; class and implement &lt;code&gt;handlerFuture&lt;/code&gt;. If your handler doesn’t produce output, then extend &lt;code&gt;FutureHandler[T, Unit]&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;In Scala we’re used to storing library’s default configuration in &lt;code&gt;reference.config&lt;/code&gt;. The template also generates &lt;code&gt;Config.scala&lt;/code&gt; file with &lt;code&gt;Config&lt;/code&gt; trait that loads the config and uses &lt;a href=&quot;https://github.com/ceedubs/ficus&quot; target=&quot;_blank&quot;&gt;Ficus&lt;/a&gt;. Feel free to mix it into your implementations where configuration is needed.&lt;/p&gt;
+
+&lt;h3 id=&quot;logging&quot;&gt;Logging&lt;/h3&gt;
+
+&lt;p&gt;AWS provides log4j adapter that sends logs to CloudWatch. The template includes &lt;code&gt;log4j.properties&lt;/code&gt; in &lt;code&gt;resources&lt;/code&gt; directory with necessary configuration for it also.&lt;/p&gt;
+
+&lt;h3 id=&quot;package-and-upload-to-s3&quot;&gt;Package and Upload to S3&lt;/h3&gt;
+
+&lt;p&gt;The template is using &lt;a href=&quot;https://github.com/sbt/sbt-assembly&quot; target=&quot;_blank&quot;&gt;sbt-assembly&lt;/a&gt; SBT plugin. To create the deployment package, run &lt;code&gt;sbt assembly&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The output jar file is going be pretty large (like 32 Megabytes), so uploading it via AWS Lambda Console wouldn’t be a good idea. Instead, a much better alternative would be to upload to S3 and in AWS Lambda Console put the S3 url. The template handles this for you also, just run &lt;code&gt;sbt s3Upload&lt;/code&gt;. Note that &lt;code&gt;s3Upload&lt;/code&gt; sbt task is dependent on &lt;code&gt;assembly&lt;/code&gt; task, so you can just run s3Upload and you’ll be good to go. Before doing S3 upload make sure you have AWS credentials properly set up (in &lt;code&gt;~/.aws/credentials&lt;/code&gt; or using IAM roles) and update &lt;code&gt;build.sbt&lt;/code&gt; file to specify the S3 bucket:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;YOUR S3 BUCKET&amp;gt;.s3.amazonaws.com&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The template uses &lt;a href=&quot;https://github.com/sbt/sbt-s3&quot; target=&quot;_blank&quot;&gt;sbt-s3&lt;/a&gt; SBT plugin, so feel free to check out its documentation for more details on how to configure the S3 bucket info and AWS credentials.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-aws-lambda&quot;&gt;Create AWS Lambda&lt;/h3&gt;
+
+&lt;p&gt;Go to the AWS Lambda web page and press &lt;code&gt;Create a Lambda function&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Press skip in the following page since we’re not creating our lambda from a template AWS provides:
+&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/step1-d57b86ce3e3289ceeef45c30bedb9439b683db8558d7445ecb5bd60d46506f32.png&quot; alt=&quot;Create lambda step 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Press next in following page:
+&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/step2-3480423a4f8d6ac1194552e5ed652f1a7b1b01cc52417144683aec69b500747b.png&quot; alt=&quot;Create lambda step 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the last page, specify your handler name and description, runtime as Java 8, chage the code entry type to S3, and change the S3 link url to be the url to the jar you uploaded with &lt;code&gt;s3Upload&lt;/code&gt; task:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/step3-e20d177e0c700777524027a0fa2f23a0e13b5a2ab422cd2f43214e4585f4154e.png&quot; alt=&quot;Create lambda step 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Specify memory, timeout, and VPC configuration:
+&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/step4-f6643a0a92eb0f1e2664f04f9453ee564ee0c4c1f395641cf7ef9c0501da1217.png&quot; alt=&quot;Create lambda step 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We just created a lambda in Scala!&lt;/p&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;With AWS Lambdas, performance can be a concern if you’re running JVM. If it takes 1 second to start up JVM and 100ms to run your code, you’ll be billed for 1100 ms and that much will also be the latency. AWS Lambdas run in containers, so if the second time your code runs in same container, then you pay that penalty only on first run. If your use case is such that you won’t get much container reuse, latency is a concern, and/or you’re price sensitive, you may want to go with a non JVM language for your lambda.&lt;/p&gt;
+
+&lt;p&gt;I performed some tests to see how long it would take to start a container, as well as how much overhead would be added by my code handling the plumbing. Not a real load test (plus, I’m sure that there are so many variables in AWS Lambda infrastructure as well) but rather running it a couple times to get an idea.&lt;/p&gt;
+
+&lt;p&gt;First, I created a lambda with simple handler which takes a string and returns a string (no JSON serialization/deserialization to do on our end.) Bellow are 3 exectuions of my lambda:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-function-1st-run-77468a0d492926aa07de30460643cca15aac201e3b0b45c3fe558385b931e421.png&quot; alt=&quot;Handler function first run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-function-2nd-run-8159530a53a070647d6b744f190d212b87eb964ad91c508ec764393c7c45f15d.png&quot; alt=&quot;Handler function second run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-function-3rd-run-f0335edd4e18c904b09e01e4103b826290fae550072540789d851c4084a5d8ad.png&quot; alt=&quot;Handler function third run execution time&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As we can see, it took 835ms to run it the first time, 0.46ms for the second time, and 0.34ms on the third 3rd run.&lt;/p&gt;
+
+&lt;p&gt;Next, I wanted to do the same thing with the Handler class implementation (here we do JSON serialization/deserialization on our end):&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-class-1st-run-6c4effd872e8a9ea3e1a18f7bdf5d80cd1e42f4925b447f8a37c23683cd7605e.png&quot; alt=&quot;Handler class first run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-class-2nd-run-d337e52602074422a303054e216375e348edd668b8a049a5a91d4fe720cd20c5.png&quot; alt=&quot;Handler class second run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/handler-class-3rd-run-79fb181d2221a2d988562b6ac264e92de9490d0bc5607d6d2e0af8ba99511d56.png&quot; alt=&quot;Handler class third run execution time&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As we can see, it took 910ms to run it the first time, 3.6ms for the second time, and 0.90ms on the third 3rd run. As expected, this one is little slower than the implementation with only the primitives. But the conclusion can be made that the plumbing isn’t adding much overhead (less than 1ms), where I’m sure the actual handler code will take longer to execute and 1ms will be ignorable compared to the actual execution time.&lt;/p&gt;
+
+&lt;p&gt;Next, I wanted to create a lambda with the hello-world Nodejs template to get an idea about how much overhead JVM is adding:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/node-hello-world-1st-run-71e81dc9ab0f1864ed8faecdf3f15eb7658aac6793f15aa83fb0708b62d8ba74.png&quot; alt=&quot;Node hello world first run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/node-hello-world-2nd-run-8b8c7a5b659b23008c837dac0ee1a8515cb1493f7c102637cbb572fb1431a27b.png&quot; alt=&quot;Node hello world second run execution time&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;/assets/posts/writing-aws-lambdas-in-scala/node-hello-world-3rd-run-283aa89aa1b4b5ebc6d36d21db9841e7ddb6a7c68bb4a887cbc6d905946f23fa.png&quot; alt=&quot;Node hello world third run execution time&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As we can see, it took 31ms to run it the first time, 1ms for the second time, and 0.51ms on the third 3rd run. You can notice that it takes about ~30ms to create a node container compared to ~900ms to create a JVM container. The execution time is about the same for both JS and Scala (all 3 under 1ms for 3rd run - note that I’m not load testing and also not trying to compare the Nodejs performance to the JVM performance.)&lt;/p&gt;
+
+&lt;p&gt;Another performance consideration which I didn’t capture would be when your container is being reused most of the time and your handler has been executed enough time. How much will JVM optimize execution time with JIT and other optimization it’s doing.&lt;/p&gt;
+
+&lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
+
+&lt;p&gt;Feel free to checkout github projects for the source:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yeghishe/scala-aws-lambda-seed&quot; target=&quot;_blank&quot;&gt;scala-aws-lambda-seed&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yeghishe/scala-aws-lambda-utils&quot; target=&quot;_blank&quot;&gt;scala-aws-lambda-utils&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We can create AWS Lambdas in Scala in a very elegant and easy way, using native language constructs,a and using great Scala tool chain without adding much overhead or boilerplate.&lt;/p&gt;
+
+&lt;p&gt;Hope you enjoyed reading the article and that you’ll consider using Scala when creating your next lambda ;)&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/10/16/writing-aws-lambdas-in-scala.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/10/16/writing-aws-lambdas-in-scala.html</guid>
+        
+        <category>scala</category>
+        
+        <category>opensource</category>
+        
+        <category>activator</category>
+        
+        <category>aws</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Akka Http Request Throttling</title>
+        <description>&lt;p&gt;Akka Http is a great framework for rest microservices and here at &lt;a href=&quot;http://www.burnerapp.com/&quot; target=&quot;_blank&quot;&gt;Ad Hoc Labs&lt;/a&gt; we’re slowly migrating from Spray to Akka Http. Since we use Spray extensively we ended up having utility classes to complement some functionality here and there or shared in a common jar with other utility classes. With Akka Http we want to keep things little more clean and reduce boilerplate with high level constructs. We decided to start a new project named &lt;a href=&quot;https://github.com/adhoclabs/akka-http-contrib&quot; target=&quot;_blank&quot;&gt;akka-http-contrib&lt;/a&gt; that will host all akka http functionality that we’re building that’s not already in akka-http project. We recently open sourced it since other community members will find it helpful and hopefully will contribute also.&lt;/p&gt;
+
+&lt;p&gt;First functionality we needed for a new project we started with Akka Http was to introduce throttling for some endpoints. We didn’t want to write boilerplate for each endpoint we want to introduce throttling for but instead we wanted to be able to introduce throttling for any endpoint by adding it to &lt;a href=&quot;https://github.com/typesafehub/config&quot; target=&quot;_blank&quot;&gt;typesafe config&lt;/a&gt;. Basically we wanted a directive that will wrap the routes and when request comes in, depending on the config and thresholds, either let the route execute or complete the request with 429 - Too Many Requests and prevent the route from being executed. This at high level, which should handle most of the use cases but we also wanted to have it extensible enough that whenever there is a special usecase it still can be handled by writing little code.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;In order to achieve both goals we decided to design &lt;code&gt;throttle&lt;/code&gt; directive the following way where it takes setting:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThrottleDirective&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;throttle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ThrottleSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://github.com/adhoclabs/akka-http-contrib/blob/master/src/main/scala/co/adhoclabs/akka/http/contrib/throttle/ThrottleDirective.scala&quot; target=&quot;_blank&quot;&gt;ThrottleDirective.scala&lt;/a&gt;, where settings is:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThrottleSettings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shouldThrottle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;HttpRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onExecute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;HttpRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;see &lt;a href=&quot;https://github.com/adhoclabs/akka-http-contrib/blob/master/src/main/scala/co/adhoclabs/akka/http/contrib/throttle/package.scala&quot; target=&quot;_blank&quot;&gt;package.scala&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This would be the low level api. Throttle directive delegates the decision making to settings, weather a route should be executed or not. Which in turn takes the http request and returns Future[Boolean]. And when route is executed it calls &lt;code&gt;onExecute&lt;/code&gt; callback to let the implementation know that it was executed (to increment a counter for example). This model should be very extensible since decision maker is plugable and it will get the entire http request and return a boolean.&lt;/p&gt;
+
+&lt;p&gt;On top of this model we created the high level api that allows us to add throttling by adding it to the config file. Let’s start with the configuration:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;akka&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contrib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;throttle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;endpoints&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;REGEX&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MATCHING&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;THE&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;REQUEST&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;window&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;m&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;allowed-calls&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;2&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;throttle-period&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;m&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All the configuration is under &lt;code&gt;akka.http.contrib.throttle&lt;/code&gt; namespace. &lt;code&gt;enabled&lt;/code&gt; is a convenience flag that allows us to disable throttling without removing all the endpoint configurations. To introduce throttling of an endpoint we add a new config in &lt;code&gt;endpoints&lt;/code&gt;. It has the http &lt;code&gt;method&lt;/code&gt;, &lt;code&gt;pattern&lt;/code&gt; which is a regex matching the url (open to a PR to have play style routes support instead of regex), &lt;code&gt;allowed-calls&lt;/code&gt; in a given &lt;code&gt;window&lt;/code&gt; of time and optional &lt;code&gt;throttle-period&lt;/code&gt; that prevents the endpoint form being called for specified period of time if &lt;code&gt;allowed-calls&lt;/code&gt; was reached in a given &lt;code&gt;window&lt;/code&gt;. Essentially it’s a way to increase throttling time if needed. Also there is configuration for storage where the counters will be stored. We use redis but other storages can easily be implemented and wired in config file with &lt;code&gt;default-store&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once we have the configuration all we need to do is to bring implicit throttle settings into the scope and wrap our routes in &lt;code&gt;throttle&lt;/code&gt; directive:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;throttleSettings&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MetricThrottleSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fromConfig&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindAndHandle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;throttle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;httpInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;httpPort&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As you can see we bring the implicit throttle settings into the scope by calling &lt;code&gt;MetricThrottleSettings.fromConfig&lt;/code&gt;. I guess I need to explain what &lt;code&gt;MetricThrottleSettings&lt;/code&gt; is. It’s an abstract trait that extends &lt;code&gt;ThrottleSettings&lt;/code&gt; explained above that brings the concept of metrics (like maximum number of calls, given time window, number of calls an endpoint got, etc in a data store). It implements &lt;code&gt;shouldThrottle&lt;/code&gt; and &lt;code&gt;onExecute&lt;/code&gt; from &lt;code&gt;ThrottleSettings&lt;/code&gt; and introduces &lt;code&gt;store&lt;/code&gt; and &lt;code&gt;endpoints&lt;/code&gt; new abstract methods. &lt;code&gt;MetricThrottleSettings.fromConfig&lt;/code&gt; returns and implementation of &lt;code&gt;MetricThrottleSettings&lt;/code&gt; (which in it’s turn is a &lt;code&gt;ThrottleSettings&lt;/code&gt;) that implements &lt;code&gt;store&lt;/code&gt; and &lt;code&gt;endpoints&lt;/code&gt; abstract methods using the information specified in the config file.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://github.com/adhoclabs/akka-http-contrib/tree/master/src/test/scala/co/adhoclabs/akka/http/contrib/throttle&quot; target=&quot;_blank&quot;&gt;throttle package&lt;/a&gt; for more information on those abstractions.&lt;/p&gt;
+
+&lt;p&gt;As always, pull requests are welcome.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 13 Jul 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/07/13/akka-http-request-throttling.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/07/13/akka-http-request-throttling.html</guid>
+        
+        <category>scala</category>
+        
+        <category>opensource</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ammonite Modules</title>
+        <description>&lt;p&gt;Ammonite is such a great project, especially &lt;a href=&quot;http://www.lihaoyi.com/Ammonite/#Ammonite-REPL&quot; target=&quot;_blank&quot;&gt;Ammonite-REPL&lt;/a&gt;. It brings many great things to scala console: syntax highlighting, better editing, dynamically loading dependencies, loading scripts, etc. It comes very handy if you want to play with a some library without creating an sbt project. Or you want to try something out without necessarily loading IntelliJ. I happen to do it often and decided to start an open source project called &lt;a href=&quot;https://github.com/yeghishe/ammonite-modules&quot; target=&quot;_blank&quot;&gt;ammonite-modules&lt;/a&gt;. The idea is to have pre-defined modules you can load in Ammonite Repl. Modules will have all the dependencies needed at latest versions and do some basic setup.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The structure of the project is simple:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;&lt;/span&gt;├── base.sc
+├── modules
+│   ├── project1
+│   │   ├── project1-module1.sc
+│   │   ├── project1-module2.sc
+│   │   └── project1-module3.sc
+│   ├── project2
+│   │   ├── project2-module1.sc
+│   │   └── project2-module2.sc
+│   ├── project3
+│   │   └── project3.sc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code&gt;Base.sc&lt;/code&gt; file contains all the versions (hopefully it will be maintained so all latest versions will be in master). Modules directory has all the modules. The idea here is that each project may have different modules and user chooses which module to load. For example this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;&lt;/span&gt;├── Base.sc
+├── modules
+│   ├── akka
+│   │   ├── akka-actor.sc
+│   │   ├── akka-http.sc
+│   │   └── akka-stream.sc
+│   ├── cats
+│   │   ├── cats-core.sc
+│   │   └── cats.sc
+│   ├── circe
+│   │   └── circe.sc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here use can load &lt;code&gt;akka-actor&lt;/code&gt;, &lt;code&gt;akka-http&lt;/code&gt;, &lt;code&gt;akka-stream&lt;/code&gt;, etc. All three are different modules. Or user may want to load only &lt;code&gt;cats-core&lt;/code&gt; vs &lt;code&gt;cats&lt;/code&gt; (all cats projects). Or it can be a simple project with only one module, like &lt;code&gt;circe&lt;/code&gt; in this example.&lt;/p&gt;
+
+&lt;p&gt;To load a module run &lt;code&gt;loadM(&quot;&amp;lt;PROJECT&amp;gt;&quot; -&amp;gt; &quot;&amp;lt;MODULE&amp;gt;&quot;)&lt;/code&gt; (for example, loadM(“cats” -&amp;gt; “cats-core”)). To use &lt;code&gt;loadM&lt;/code&gt; method you need to have it in &lt;code&gt;predef.sc&lt;/code&gt; file. Simply run following to have the proper predefs created:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;curl https://raw.githubusercontent.com/yeghishe/ammonite-modules/master/predef.sc &amp;gt; ~/.ammonite/predef.sc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can start &lt;code&gt;amm&lt;/code&gt; in &lt;code&gt;ammonite-modules&lt;/code&gt; directory to laod a module or have &lt;code&gt;AMMONITE_MODULES&lt;/code&gt; environment variable to point to the directory where you checked out &lt;code&gt;ammonite-modules&lt;/code&gt;. Environemt variable will give more flexibility.&lt;/p&gt;
+
+&lt;p&gt;Modules don’t stop by just loading needed dependencies and importing classes. Each module can also do a reasonable setup for the project. For example, &lt;code&gt;akka-actor&lt;/code&gt; may want to create an implicit actor system, &lt;code&gt;akka-http&lt;/code&gt; and &lt;code&gt;akka-stream&lt;/code&gt; may want to create implicit actor system and materializer, etc. You get the idea.&lt;/p&gt;
+
+&lt;p&gt;To demonstrate this let’s write an akka application right in Ammonite Repl. First things first, let’s load &lt;code&gt;akka-actor&lt;/code&gt; module:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;akka&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;akka-actor&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then let’s write this simple akka actor and start it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DemoActor&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Actor&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActorLogging&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preStart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;context.dispatcher&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scheduler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;schedule&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;receive&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Receive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello ammonite-modules&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;actorOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Props&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DemoActor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;demo&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You should see &lt;code&gt;Hello ammonite-modules&lt;/code&gt; message print every one second. Note that we didn’t create the actor system nor we imported &lt;code&gt;scala.concurrent.duration._&lt;/code&gt; or any akka classes, &lt;code&gt;akka-actor&lt;/code&gt; module has it predefined for us. In a production app you would want to keep the messages and props method for the actor in it’s companion object but to just play with akka this is good enough code.&lt;/p&gt;
+
+&lt;p&gt;Hope others will find it helpful and use it. Also see the next section if you would like to contribute.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-contribute&quot;&gt;How to contribute&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Each now project should have it’s sub directory under &lt;code&gt;modules&lt;/code&gt; folder and at least one scala file in it. See above how modules are named.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Versions&lt;/code&gt; case object in &lt;code&gt;Base.sc&lt;/code&gt; file should include a public val for the project with latest version.&lt;/li&gt;
+  &lt;li&gt;Add those three lines to the top of the file:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;interp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Base.sc&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Send pull requests, be it a bug fix, improvement, upgrading a version to the latest or adding more modules. All pull requests are welcome.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/05/ammonite-modules.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/05/ammonite-modules.html</guid>
+        
+        <category>scala</category>
+        
+        <category>opensource</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Plus, PlusEmpty, IsEmpty, ApplicativePlus and MonadPlus</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h2 id=&quot;plus&quot;&gt;&lt;a href=&quot;#plus&quot;&gt;Plus&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Plus&lt;/em&gt; is similar to &lt;em&gt;Semigroup&lt;/em&gt;, it actually is semigroup.
+Scalaz defines &lt;em&gt;Plus[F[_]]&lt;/em&gt; trait with &lt;em&gt;plus&lt;/em&gt; abstract method similar to
+&lt;em&gt;append&lt;/em&gt; in &lt;em&gt;Semigroup[F]&lt;/em&gt;. Where &lt;em&gt;Semigroup&lt;/em&gt; deals with types &lt;em&gt;Plus&lt;/em&gt; deals with
+higher Kinds.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It also has &lt;em&gt;semigroup&lt;/em&gt; method to convert &lt;em&gt;Plus&lt;/em&gt; to &lt;em&gt;Semigroup&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Scalaz offers &lt;em&gt;&amp;lt;+&amp;gt;&lt;/em&gt; alias for &lt;em&gt;plus&lt;/em&gt; function.&lt;/p&gt;
+
+&lt;h2 id=&quot;plusempty&quot;&gt;&lt;a href=&quot;#plustempty&quot;&gt;PlusEmpty&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;PlusEmpty&lt;/em&gt; is &lt;em&gt;Plus&lt;/em&gt; with &lt;em&gt;empty&lt;/em&gt; method. Scalaz defines it as
+&lt;em&gt;PlusEmpty[F[_]]&lt;/em&gt; trait which extend &lt;em&gt;Plus[F]&lt;/em&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It also has &lt;em&gt;monoid&lt;/em&gt; method to convert &lt;em&gt;PlusEmpty&lt;/em&gt; to &lt;em&gt;Monoid&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Scalaz offers &lt;em&gt;mempty&lt;/em&gt; alias for &lt;em&gt;empty&lt;/em&gt; function.&lt;/p&gt;
+
+&lt;h2 id=&quot;isempty&quot;&gt;&lt;a href=&quot;#isempty&quot;&gt;IsEmpty&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Scalaz defines &lt;em&gt;IsEmpty[F[_]]&lt;/em&gt; trait which extends &lt;em&gt;PlusEmpty[F]&lt;/em&gt; and adds
+&lt;em&gt;isEmpty&lt;/em&gt; method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Boolean&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;applicativeplus&quot;&gt;&lt;a href=&quot;#applicativeplus&quot;&gt;ApplicativePlus&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;ApplicativePlus&lt;/em&gt; is both &lt;em&gt;Applicative&lt;/em&gt; and &lt;em&gt;PlusEmpty&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Chris Stucchio wrote an
+&lt;a href=&quot;https://www.chrisstucchio.com/blog/2014/handle_failure_with_plus.html&quot; target=&quot;\_blank&quot;&gt;article&lt;/a&gt;
+about handling failures with ApplicativePlus that’s helpful to read.&lt;/p&gt;
+
+&lt;h2 id=&quot;monadplus&quot;&gt;&lt;a href=&quot;#monadplus&quot;&gt;MonadPlus&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;MonadPlus&lt;/em&gt; is both &lt;em&gt;Monad&lt;/em&gt; and &lt;em&gt;PlusEmpty&lt;/em&gt;. Since this is a monad and it has
+&lt;em&gt;plus&lt;/em&gt; and &lt;em&gt;empty&lt;/em&gt; methods, we can derive some functions for &lt;em&gt;MonadPlus&lt;/em&gt; also.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;filter&lt;/em&gt; will lift A if predicate returns true and will return empty otherwise.
+There is also &lt;em&gt;withFilter&lt;/em&gt; alias for &lt;em&gt;filter&lt;/em&gt; method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]])(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foldable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monoid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Which takes foldable monad and it folds it into monad. Since &lt;em&gt;MonadPlus&lt;/em&gt; is a
+monoid and T[A] is foldable, foldMap can be used here.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-plus-plusempty-isempty-applicativeplus-monadplus.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-plus-plusempty-isempty-applicativeplus-monadplus.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Monad</title>
+        <description>&lt;p&gt;&lt;em&gt;Monad&lt;/em&gt; is &lt;em&gt;Applicative&lt;/em&gt; and &lt;em&gt;Bind&lt;/em&gt;. With that we deal with:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;,&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;from &lt;em&gt;Apply&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;from &lt;em&gt;Applicative&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;from &lt;em&gt;Bind&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that in &lt;em&gt;Applicative&lt;/em&gt;, &lt;em&gt;map&lt;/em&gt; method is implemented using
+&lt;em&gt;ap&lt;/em&gt; method and in &lt;em&gt;Bind&lt;/em&gt;, &lt;em&gt;ap&lt;/em&gt; is implemented using &lt;em&gt;bind&lt;/em&gt; method. With that,
+two methods that are left to be implemented for a &lt;em&gt;Monad&lt;/em&gt; are
+&lt;em&gt;point&lt;/em&gt; and &lt;em&gt;bind&lt;/em&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Having those we can derive other methods for monad.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;liftM&lt;/strong&gt;. List a monad into a different monad.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;whileM&lt;/strong&gt;. Executes action while predicate is true and collects the results into MonadPlus.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;whileM_&lt;/strong&gt;. Executes action while predicate is true.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;unitlM&lt;/strong&gt;. Until version of WhileM.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;unitlM_&lt;/strong&gt;. Until version of WhileM_.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;iterateWhile&lt;/strong&gt;. Similar to whileM_ except predicate is A =&amp;gt; Boolean instead of F[Boolean].&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;iterateUntil&lt;/strong&gt;. Similar to unitlM_ except predicate is A =&amp;gt; Boolean instead of F[Boolean].&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-monad.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-monad.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Foldable</title>
+        <description>&lt;p&gt;Scalaz provides foldable to define all fold operations.
+It has &lt;em&gt;Foldable[F[_]]&lt;/em&gt; trait with two &lt;em&gt;foldMap&lt;/em&gt; and &lt;em&gt;foldRight&lt;/em&gt; abstract
+methods:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foldMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;,&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Monoid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foldRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;em&gt;foldMap&lt;/em&gt; says having a foldable A, a mapping function from A to B and B
+is monoid it will fold F[A] into B.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;foldRight&lt;/em&gt; says having a foldable A, initial value z of type B, and a mapping
+function from (A, B) combination to B, it will fold fa int B.
+By providing implementations for those two methods we’ll get following
+operations on foldable for free.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;foldMap&lt;/strong&gt;. As already mentioned having B be a monoid and a mapping from
+A to B it will fold into B. Here are some examples:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).foldMap() = 6&lt;/code&gt; (which is same as
+&lt;code&gt;List(1, 2, 3).foldMap((a: Int) ⇒ a&lt;/code&gt;) since identity is the default
+value for mapping function). Not that here Monoid for integer is used on
+zero and plus options so we get back the sum by doing foldMap.
+Another example with int to string mapping:&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).foldMap((a: Int) ⇒ a.toString) = &quot;123&quot;&lt;/code&gt;,
+and here monoid for string is used and we get back a concatenated string.&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;nil[Int].foldMap() = 0&lt;/code&gt; since B is monoid (int in this instance)
+when foldable is empty it will fold it into zero.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldMap1Opt&lt;/strong&gt;. Where &lt;em&gt;foldMap&lt;/em&gt; requires B to be monoid, &lt;em&gt;foldMap1Opt&lt;/em&gt;
+releives it a bit by requiring B to be a semigroup instead of monid (meaning
+it doesn’t have zero) and returnign Option[B]. Examples:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).foldMap1Opt() = Some(6)&lt;/code&gt; here we get the sum back since
+the plus is the append operator of int semigroup we imported.&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;nil[Int].foldMap1Opt() = None&lt;/code&gt;. Here we get None since your List is
+empty.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldRight&lt;/strong&gt;. As already mentioned is one of the abstract methods that need
+to be implemented. Let’s look at it for list of integeres.
+&lt;code&gt;List(1, 2, 3, 4).foldRight(1)(_ * _) = 24&lt;/code&gt; here we’re getting product
+back as I defined my inital value 1 and my mapping function is product(
+of course there is an easier way to do this in scalaz, which I’ll conver when
+I get to &lt;em&gt;Traverse&lt;/em&gt; but this will do good for the demo.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldMapRight1Opt&lt;/strong&gt;. Similar to &lt;em&gt;foldRight&lt;/em&gt; but instead of providing
+starting value we provide a function that returns starting value. But here if
+it’s empty, starting value won’t be there, so it returns optional. Examples:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).foldMapRight1Opt(a ⇒ a + 1)(_ + _) = Some(7)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;nil[Int].foldMapRight1Opt(a ⇒ a + 1)(_ + _) = None&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldRight1Opt&lt;/strong&gt; is similar to &lt;em&gt;foldMapRight1Opt&lt;/em&gt; but intead of taking a
+function for starting value it defaults to identity function.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).foldRight1Opt(_ + _) = Some(6)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;nil[Int].foldRight1Opt(_ + _) = None&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldLeft&lt;/strong&gt;. Nothing fancy here just a regular fold left. Instard of folding
+from right it folds from left.
+&lt;code&gt;List(1, 2, 3).foldLeft(0)(_ - _) = -6&lt;/code&gt; where fold right will give 2.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldMapLeft1Opt&lt;/strong&gt; and &lt;strong&gt;foldLeft1Opt&lt;/strong&gt;. Similar to their right version
+except it’s fold left.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldRightM&lt;/strong&gt; simpilar to &lt;em&gt;foldRight&lt;/em&gt; but mapping function maps (a, b)
+compbination to G[B] provided G monad and returns G[B]. Example:
+Option is a monad
+&lt;code&gt;List(1, 2, 3).foldRightM(0)((a, b) ⇒ Option(a + b)) = Some(6)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldLeftM&lt;/strong&gt; similar to &lt;em&gt;foldRightM&lt;/em&gt; but does fold left.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldMapM&lt;/strong&gt; similar to &lt;em&gt;foldRightM&lt;/em&gt; where B is a monoid and it can do fold
+  map on monoid.
+&lt;code&gt;List(1, 2, 3).foldMapM(a ⇒ Option(a.toString)) = Some(123)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;fold&lt;/strong&gt; or &lt;strong&gt;concatenate&lt;/strong&gt; do what foldMap does except here A and B are
+the same and mapping function is the identity, so it will fold to a value of
+same type using the monoid.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldr&lt;/strong&gt; and &lt;strong&gt;foldr1Opt&lt;/strong&gt; are curied versions of
+&lt;em&gt;foldRight&lt;/em&gt; and &lt;em&gt;foldRight1Opt&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldl&lt;/strong&gt; and &lt;strong&gt;foldl1Opt&lt;/strong&gt; are curied versions of
+&lt;em&gt;foldLeft&lt;/em&gt; and &lt;em&gt;foldLeft1Opt&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;foldrM&lt;/strong&gt; and &lt;strong&gt;foldlM&lt;/strong&gt; are curied versions of
+&lt;em&gt;foldRightM&lt;/em&gt; and &lt;em&gt;foldLeftM&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;length&lt;/strong&gt; or &lt;strong&gt;count&lt;/strong&gt; calculates lenght using &lt;em&gt;foldLeft&lt;/em&gt;.
+&lt;code&gt;List(1, 2, 3).length = 3&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;index&lt;/strong&gt; find item at given index using &lt;em&gt;foldLeft&lt;/em&gt; and returns optional.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).index(0) = Some(1)&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).index(3) = None&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;indexOr&lt;/strong&gt; similar to &lt;em&gt;index&lt;/em&gt; but instead of returning optional it takes
+  default value.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).indexOr(-1, 0) = 1&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).indexOr(-1, 3) = -1&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sumr&lt;/strong&gt; and &lt;strong&gt;suml&lt;/strong&gt; are calculateing sum, one using &lt;em&gt;foldRight&lt;/em&gt; other
+using  &lt;em&gt;foldLeft&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).sumr = 6&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).suml = 6&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toList&lt;/strong&gt; uses &lt;em&gt;foldLeft&lt;/em&gt; and list’s Nil and :: cons operators to build list.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toIndexedSeq&lt;/strong&gt; uses &lt;em&gt;foldLeft&lt;/em&gt; and :+ cons operators to build indexed
+sequence.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toSet&lt;/strong&gt; uses &lt;em&gt;foldLeft&lt;/em&gt; and + cons operators to build set.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toStream&lt;/strong&gt; uses &lt;em&gt;foldRight&lt;/em&gt; and Stream’s cons operators to build Stream.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toIList&lt;/strong&gt; uses &lt;em&gt;foldLeft&lt;/em&gt; and :: cons operators to scalaz IList.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;toEphemeralStream&lt;/strong&gt; uses &lt;em&gt;foldRight&lt;/em&gt; and EphemeralStream’s cons operators to
+build scalaz EphemeralStream.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;∀&lt;/strong&gt; or &lt;strong&gt;all&lt;/strong&gt; use &lt;em&gt;foldRight&lt;/em&gt; to determine if predicate is true for all
+elements
+&lt;code&gt;List(1, 1, 1) ∀ (a ⇒ (a % 2) ≠ 0) = true&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;∃&lt;/strong&gt; or &lt;strong&gt;any&lt;/strong&gt; use &lt;em&gt;foldRight&lt;/em&gt; to determine if predicate is true for at least
+one element
+&lt;code&gt;List(1, 2, 3) ∃ (a ⇒ (a % 2) ≟ 0) = true&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;allM&lt;/strong&gt; and &lt;strong&gt;anyM&lt;/strong&gt; are monadic verions of &lt;em&gt;all&lt;/em&gt; and &lt;em&gt;any&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;maximum&lt;/strong&gt; gets the maxinum of the values
+&lt;code&gt;List(1, 2, 3).maximum = Some(3)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;maximumOf&lt;/strong&gt; gets the maxinum value maping function generates.
+&lt;code&gt;List(0D, math.Pi).maximumOf(math.cos) = Some(1.0)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;maximumBy&lt;/strong&gt; gets the element on which maping function generates the greates
+value.
+&lt;code&gt;List(0D, math.Pi).maximumBy(math.cos) = Some(0.0)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;minimum&lt;/strong&gt; gets the minimum of the values
+&lt;code&gt;List(1, 2, 3).minimum = Some(1)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;minimumOf&lt;/strong&gt; gets the minimum value maping function generates.
+&lt;code&gt;List(0D, math.Pi).minimumOf(math.cos) = Some(-1.0)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;minimumBy&lt;/strong&gt; gets the element on which maping function generates the lowest
+value.
+&lt;code&gt;List(0D, math.Pi).minimumBy(math.cos) = Some(3.141592653589793)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;emtpy&lt;/strong&gt; tells if foldable is empty. Examples:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).empty = false&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;nil[Int].empty = true&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;element&lt;/strong&gt; tells if element is in foldable. Examples:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).element(1) = true&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;List(1, 2, 3).element(3) = false&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;splitWith&lt;/strong&gt; splits the elements into groups that alternatively satisfy
+and don’t satisfy the predicate.
+&lt;code&gt;List(2, 4, 1, 3, 5).splitWith(a ⇒ (a % 2) ≟ 0) = List(NonEmptyList(2, 4), NonEmptyList(1, 3, 5))&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;selectSplit&lt;/strong&gt; selects only the elements that satisfy the predicate:
+&lt;code&gt;List(1, 2, 3).selectSplit(a ⇒ (a % 2) ≟ 0) = List(NonEmptyList(2))&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;intercalate&lt;/strong&gt; inserts specified element between every elements and folds
+using the monoid. &lt;code&gt;List(1, 2, 3).intercalate(10) = 26&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.anyVal.doubleInstance&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.anyVal.intInstance&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.string._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.option._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.list._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.equal._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.foldable._&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldMap() &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldMap((a: Int) =&amp;gt; a.toString) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; nil[Int].foldMap() &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldMap1Opt() &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMap1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; nil[Int].foldMap1Opt() &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3, 4).foldRight(1)(_ * _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMapRight1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldMapRight1Opt(a =&amp;gt; a + 1)(_ + _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMapRight1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; nil[Int].foldMapRight1Opt(a =&amp;gt; a + 1)(_ + _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldRight1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldRight1Opt(_ + _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldRight1Opt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; nil[Int].foldRight1Opt(_ + _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3, 4).foldRight(1)(_ * _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3, 4).foldRight(1)(_ * _) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldRightM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Option&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldRightM(0)((a, b) ⇒ Option(a + b)) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldMapM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Option&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).foldRightM(0)((a, b) ⇒ Option(a + b)) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).concatenate &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).length &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).index(0) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).index(3) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexOr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).indexOr(-1, 0) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexOr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).indexOr(-1, 3) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sumr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).sumr &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;suml&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).suml &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;∀&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;≠&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 1, 1) ∀ (a ⇒ (a % 2) ≠ 0) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;∃&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;≟&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3) ∃ (a ⇒ (a % 2) ≟ 0) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).maximum &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximumOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(0D, math.Pi).maximumOf(math.cos) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximumBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(0D, math.Pi).maximumBy(math.cos) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).minimum &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimumOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(0D, math.Pi).minimumOf(math.cos) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimumBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(0D, math.Pi).minimumBy(math.cos) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).empty &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; nil[Int].empty &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).element(1) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).element(4) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;≟&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).element(4) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectSplit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;⇒&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;≟&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).selectSplit(a ⇒ (a % 2) ≟ 0) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercalate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; List(1, 2, 3).intercalate(10) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;output&quot;&gt;Output&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;List(1, 2, 3).foldMap()                                    6
+List(1, 2, 3).foldMap((a: Int) =&amp;gt; a.toString)              123
+nil[Int].foldMap()                                         0
+List(1, 2, 3).foldMap1Opt()                                Some(6)
+nil[Int].foldMap1Opt()                                     None
+List(1, 2, 3, 4).foldRight(1)(_ * _)                       24
+List(1, 2, 3).foldMapRight1Opt(a =&amp;gt; a + 1)(_ + _)          Some(7)
+nil[Int].foldMapRight1Opt(a =&amp;gt; a + 1)(_ + _)               None
+List(1, 2, 3).foldRight1Opt(_ + _)                         Some(6)
+nil[Int].foldRight1Opt(_ + _)                              None
+List(1, 2, 3, 4).foldRight(1)(_ * _)                       2
+List(1, 2, 3, 4).foldRight(1)(_ * _)                       -6
+List(1, 2, 3).foldRightM(0)((a, b) ⇒ Option(a + b))        Some(6)
+List(1, 2, 3).foldRightM(0)((a, b) ⇒ Option(a + b))        Some(123)
+List(1, 2, 3).concatenate                                  6
+List(1, 2, 3).length                                       3
+List(1, 2, 3).index(0)                                     Some(1)
+List(1, 2, 3).index(3)                                     None
+List(1, 2, 3).indexOr(-1, 0)                               1
+List(1, 2, 3).indexOr(-1, 3)                               -1
+List(1, 2, 3).sumr                                         6
+List(1, 2, 3).suml                                         6
+List(1, 1, 1) ∀ (a ⇒ (a % 2) ≠ 0)                          true
+List(1, 2, 3) ∃ (a ⇒ (a % 2) ≟ 0)                          true
+List(1, 2, 3).maximum                                      Some(3)
+List(0D, math.Pi).maximumOf(math.cos)                      Some(1.0)
+List(0D, math.Pi).maximumBy(math.cos)                      Some(0.0)
+List(1, 2, 3).minimum                                      Some(1)
+List(0D, math.Pi).minimumOf(math.cos)                      Some(-1.0)
+List(0D, math.Pi).minimumBy(math.cos)                      Some(3.141592653589793)
+List(1, 2, 3).empty                                        false
+nil[Int].empty                                             true
+List(1, 2, 3).element(1)                                   true
+List(1, 2, 3).element(4)                                   false
+List(1, 2, 3).element(4)                                   List(NonEmptyList(2, 4), NonEmptyList(1, 3, 5))
+List(1, 2, 3).selectSplit(a ⇒ (a % 2) ≟ 0)                 List(NonEmptyList(2))
+List(1, 2, 3).intercalate(10)                              26
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-foldable.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-foldable.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Comonad</title>
+        <description>&lt;p&gt;&lt;em&gt;Comonad&lt;/em&gt; is a &lt;em&gt;Cobind&lt;/em&gt; that also has &lt;em&gt;copoint&lt;/em&gt; method.
+Scalaz defines &lt;em&gt;Comonad[F[_]]&lt;/em&gt; with &lt;em&gt;copoint&lt;/em&gt; abstract method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that when &lt;em&gt;point&lt;/em&gt; method of &lt;em&gt;Monad&lt;/em&gt; turns A to F[A],
+&lt;em&gt;copoint&lt;/em&gt; method of &lt;em&gt;Comonad&lt;/em&gt; turns F[A] to A.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Since &lt;em&gt;NonEmptyList&lt;/em&gt; is &lt;em&gt;Comonad&lt;/em&gt; I’m gonna demonstrate it on &lt;em&gt;NonEmptyList&lt;/em&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.NonEmptyList._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.comonad._&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;NonEmptyList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; NonEmptyList(1, 2, 3).copoint &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;output&quot;&gt;Output&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;NonEmptyList(1, 2, 3).copoint    1
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-comonad.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-comonad.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Cobind</title>
+        <description>&lt;p&gt;&lt;em&gt;Cobind&lt;/em&gt; is a &lt;em&gt;Functor&lt;/em&gt; that also has &lt;em&gt;cobind&lt;/em&gt; method.
+Scalaz defines &lt;em&gt;Cobind[F[_]]&lt;/em&gt; trait with &lt;em&gt;cobind&lt;/em&gt; abstract method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cobind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Having F[A] and mapping F[A] to B it returns F[B]. Note that unlike &lt;em&gt;bind&lt;/em&gt;
+method in &lt;em&gt;Bind&lt;/em&gt; functor, &lt;em&gt;cobind&lt;/em&gt; takes F[A] =&amp;gt; B instead of A =&amp;gt; F[B] function.&lt;/p&gt;
+
+&lt;p&gt;Since we have &lt;em&gt;cobind&lt;/em&gt; method we can define &lt;em&gt;cojoin&lt;/em&gt; method bases on it.
+Unlike to &lt;em&gt;join&lt;/em&gt; in &lt;em&gt;Bind&lt;/em&gt;, it turns F[A] to F[F[A]] instead of F[F[A]] to F[A].&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cojoin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cobind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Scalaz has &lt;em&gt;coflatten&lt;/em&gt; alias for &lt;em&gt;cojoin&lt;/em&gt; and &lt;em&gt;coflatMap&lt;/em&gt; alias for &lt;em&gt;cobind&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;em&gt;Option&lt;/em&gt; is &lt;em&gt;Cojoin&lt;/em&gt; I’m gonna demonstrate those methods on &lt;em&gt;Option&lt;/em&gt; with
+short examples:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.option._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.std.option._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.cobind._&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Option&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cobind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some.cobind(isEmpty) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coflatMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some.coflatMap(isEmpty) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cojoin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some.cojoin &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coflatten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some.coflatten &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;output&quot;&gt;Output&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1.some.cobind(isEmpty)                                     Some(false)
+1.some.coflatMap(isEmpty)                                  Some(false)
+1.some.cojoin                                              Some(Some(1))
+1.some.coflatten                                           Some(Some(1))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-cobind.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-cobind.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Scalaz Bind</title>
+        <description>&lt;p&gt;&lt;em&gt;Bind&lt;/em&gt; is an &lt;em&gt;Apply&lt;/em&gt; that also has bind method.
+Scalaz defines &lt;em&gt;Bind[F[_]]&lt;/em&gt; trait with &lt;em&gt;bind&lt;/em&gt; abstract method.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Having F[A] and mapping A to F[A] it returns F[B].&lt;/p&gt;
+
+&lt;p&gt;Since &lt;em&gt;Bind&lt;/em&gt; is &lt;em&gt;Apply&lt;/em&gt; it inherits all the methods that &lt;em&gt;Apply&lt;/em&gt; offers plus
+it needs to provide implementation for &lt;em&gt;map&lt;/em&gt; and &lt;em&gt;ap&lt;/em&gt; methods.
+Note that &lt;em&gt;Bind&lt;/em&gt; implements &lt;em&gt;ap&lt;/em&gt; using &lt;em&gt;bind&lt;/em&gt; and &lt;em&gt;map&lt;/em&gt; methods:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fa0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fa&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Having &lt;em&gt;bind&lt;/em&gt; method we can derive &lt;em&gt;join&lt;/em&gt; method which will take F[F[A]] and
+turn it into F[A]:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ffa&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ffa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We can also define monadic if, having F[Boolean], F[B] and F[B] we return
+first F[B] or last.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifTrue&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifFalse&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifTrue&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifFalse&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Scalaz offers following syntax/derived functions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;∗&lt;/strong&gt;, &lt;strong&gt;&amp;gt;&amp;gt;=&lt;/strong&gt; and &lt;strong&gt;flatMap&lt;/strong&gt;. All aliases for bind method.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;μ&lt;/strong&gt; and &lt;strong&gt;join&lt;/strong&gt;. When there is implicit Liskov A to F[B] it will
+join F[A] to F[B].&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&amp;gt;&amp;gt;&lt;/strong&gt;. Converts to F[B] regardeless of the value of a.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ifM&lt;/strong&gt;. If there is implicit to convert A to boolean it returns
+true F[B] or false F[B] based on boolean value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since &lt;em&gt;Option&lt;/em&gt; is &lt;em&gt;Bind&lt;/em&gt; I’m gonna demonstrate those methods on &lt;em&gt;Option&lt;/em&gt; with
+short examples:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.std.option._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.std.option._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scalaz.syntax.bind._&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some.flatMap(a =&amp;gt; (a + 1).some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some &amp;gt;&amp;gt;= (a =&amp;gt; (a + 1).some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;∗&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some ∗ (a =&amp;gt; (a + 1).some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;∗&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; none[Int] ∗ (a =&amp;gt; (a + 1).some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; 1.some &amp;gt;&amp;gt; 5.some &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; none[Int] &amp;gt;&amp;gt; 5.some &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ifM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; true.some.ifM(1.some, 2.some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ifM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; false.some.ifM(1.some, 2.some) &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;output&quot;&gt;Output&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1.some.flatMap(a =&amp;gt; (a + 1).some)                          Some(2)
+1.some &amp;gt;&amp;gt;= (a =&amp;gt; (a + 1).some)                             Some(2)
+1.some ∗ (a =&amp;gt; (a + 1).some)                               Some(2)
+none[Int] ∗ (a =&amp;gt; (a + 1).some)                            None
+1.some &amp;gt;&amp;gt; 5.some                                           Some(5)
+none[Int] &amp;gt;&amp;gt; 5.some                                        None
+true.some.ifM(1.some, 2.some)                              Some(1)
+false.some.ifM(1.some, 2.some)                             Some(2)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 -0700</pubDate>
+        <link>http://yeghishe.github.io/2016/06/04/scalaz-bind.html</link>
+        <guid isPermaLink="true">http://yeghishe.github.io/2016/06/04/scalaz-bind.html</guid>
+        
+        <category>scala</category>
+        
+        <category>scalaz</category>
+        
+        
+      </item>
+    
   </channel>
 </rss>

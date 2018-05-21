@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+if (window.location.host.indexOf('github.io') > -1 && window.location.protocol == "http:") {
+      window.location.protocol = "https";
+}
+</script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-58866358-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-58866358-1);
+</script>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>My Gulp Files&amp;#58; Rest Api Projects</title>
+  <meta name="description" content="For this type of projects I use CoffeScript, Chai and Mocka for unit testing,Istanbul for code coverage, Sinon and Proxyquire for mocking, Jenkins forcontinu...">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yeghishe.github.io/2015/08/13/my-gulp-files-rest-api.html">
+  <link rel="alternate" type="application/rss+xml" title="Yeghishe Piruzyan's blog" href="http://yeghishe.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        
+      </div>
+
+      <div class="row">
+        <div class="sidebar col-sm-3 hidden-xs">
+  <div class="about">
+  <a class="divider" href="/">Yeghishe Piruzyan</a>
+  <p>
+     I'm a software engineer based in Los Angeles. Blogging about interesting technologies and challenges.
+  </p>
+  <p class="scala">
+    scala> favoriteTopic()
+    <br />
+    res0: String = scala
+  </p>
+
+  <ul class="divider">
+    <li>
+      <a href="https://github.com/yeghishe" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/ypiruzyan" target="_blank">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://twitter.com/ypiruzyan" target="_blank">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:ypiruzyan@gmail.com">
+        <i class="fa fa fa-envelope-square" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <ul class="tag-list divider">
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/misc">misc</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/tools">tools</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/sbt">sbt</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scala">scala</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/jenkins">jenkins</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/build">build</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/akka">akka</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activator">activator</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/docker">docker</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/scalaz">scalaz</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/nodejs">nodejs</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/devops">devops</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/gulp">gulp</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/ionic">ionic</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/coffeescript">coffeescript</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/vpn">vpn</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/opensource">opensource</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/aws">aws</a>
+    </li>
+  
+    
+    
+    
+    <li>
+      <a class="page-link" href="/tags/activat">activat</a>
+    </li>
+  
+</ul>
+
+  <nav>
+</nav>
+
+
+  <a class="rss" href="/feed.xml">
+    subscribe via RSS <i class="fa fa-rss-square" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+        <main class="col-sm-offset-3 col-sm-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1 class="post-title" itemprop="name headline">My Gulp Files&#58; Rest Api Projects</h1>
+    <h3 class="post-details">
+      <time datetime="2015-08-13T00:00:00-07:00" itemprop="datePublished">Aug 13, 2015</time>
+    </h3>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For this type of projects I use CoffeScript, Chai and Mocka for unit testing,
+Istanbul for code coverage, Sinon and Proxyquire for mocking, Jenkins for
+continuous integration. This type of projects are easy to build because those
+don’t have front-end components, compilation/optimization, browser testing,
+live reload etc. And for server side code we don’t need to compile CoffeeScript to
+JavaScript since it’s running on server and we can use <em>coffee</em> executable to
+run the code instead of <em>node</em> executable. I also use CoffeScript for my
+gulpfile since it makes it much more clean and compact. Some people who do
+that like to also create <em>gulpfile.js</em> file with</p>
+
+<!--more-->
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;coffee-script/register&#39;</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gulpfile.coffee&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>as a way to load gulpfile. I prefer not to do that to not have that extra build
+file and confusion why there are two gulp files one with js extension other
+with coffee extensions, is JavaScript file complied version of coffee script,
+etc. Gulp can figure out that it needs to <em>gulpfile.coffee</em> if you have
+<em>coffee-script</em> module in <em>node_modules</em>. So I just add it to my dev dependencies
+(It does mean though that I have to live with npm warning that coffee script
+should be installed globally).</p>
+
+<noscript><pre>gulp  = require &#39;gulp&#39;
+del   = require &#39;del&#39;
+$     = require(&#39;gulp-load-plugins&#39;) lazy: false
+port  = 3000
+paths =
+  appFile: &#39;./server/server.coffee&#39;
+  codeFiles: [&#39;./server/**/*&#39;]
+  coffeeFiles: [&#39;./server/**/*.coffee&#39;]
+  specFiles: [&#39;./test/**/*.spec.coffee&#39;]
+  coveredFiles: [
+    &#39;./server/**/*.coffee&#39;
+    &#39;!./server/*.coffee&#39;
+    &#39;!./server/boot/*.coffee&#39;
+    &#39;!./server/models/*.coffee&#39;
+  ]
+  buildDir: &#39;build/&#39;
+
+gulp.task &#39;version&#39;, -&gt;
+  console.log require(&#39;./package.json&#39;).version
+
+gulp.task &#39;clean&#39;, (cb) -&gt;
+  del [paths.buildDir], cb
+
+gulp.task &#39;lint&#39;, -&gt;
+  gulp.src paths.coffeeFiles
+    .pipe $.coffeelint()
+    .pipe $.coffeelint.reporter(
+      if process.env.JENKINS is &#39;true&#39; then &#39;checkstyle&#39; else &#39;coffeelint-stylish&#39;
+    )
+
+gulp.task &#39;test&#39;, -&gt;
+  gulp.src paths.coveredFiles
+    .pipe $.coffeeIstanbul includeUntested: true
+    .pipe $.coffeeIstanbul.hookRequire()
+      .on &#39;finish&#39;, -&gt;
+        gulp.src paths.specFiles
+          .pipe $.mocha reporter: &#39;mocha-jenkins-reporter&#39;, compilers: &#39;coffee:coffee-script&#39;
+          .pipe $.coffeeIstanbul.writeReports dir: paths.buildDir + &#39;coverage&#39;, reporters: [&#39;cobertura&#39;, &#39;lcov&#39;, &#39;text&#39;]
+
+gulp.task &#39;server:start&#39;, -&gt;
+  $.developServer.listen
+    path: paths.appFile
+    env: PORT: port, NODE_ENV: &#39;development&#39;, DEBUG: &#39;net-intro-api*&#39;
+
+gulp.task &#39;watch&#39;, -&gt;
+  gulp.watch paths.codeFiles, gulp.series(&#39;build&#39;)
+  gulp.watch paths.codeFiles, $.developServer.restart
+
+gulp.task &#39;build&#39;, gulp.series(&#39;clean&#39;, &#39;lint&#39;, &#39;test&#39;)
+gulp.task &#39;default&#39;, gulp.series(&#39;build&#39;, gulp.parallel(&#39;server:start&#39;, &#39;watch&#39;))</pre></noscript>
+<script src="https://gist.github.com/yeghishe/336594a088086f4db0bf.js"> </script>
+
+<p>Going from top to bottom, first task is <strong>version</strong>, it just gets the package
+version from <em>package.json</em> file and outputs it to the console. I use this in Jenkins.</p>
+
+<p>Next comes <strong>clean</strong>. It just removes build generated files, for next build to start
+from a clean slate.</p>
+
+<p>Next comes <strong>lint</strong>. I like to lint my code and know about issues with my code sooner
+than later. Based on Jenkins environment variable I decide which report format to use.
+During development I like to use <em>stylish</em> and for Jenkins, <em>checkstyle</em> to generate
+checkstyle xml and report it nicely in Jenkins using checkstyle plugin.</p>
+
+<p>Next comes <strong>test</strong>. It does both unit testing and code coverage. This will generate
+test and code coverage reports, both on console using text and xml files to be used by
+jUnit and Cobertura plugins to generate nice graphs and reports in Jenkins.</p>
+
+<p>Next comes <strong>server:start</strong>. Which simply start my node server in development.</p>
+
+<p>Final three are <strong>watch</strong>, <strong>build</strong>, <strong>default</strong>. <em>build</em> is combo task that runs
+<em>clean</em>, <em>lint</em> and <em>test</em> in that order. <em>watch</em> watches my files for changes and it
+triggers build and restarts the dev server automatically every time I make a change to
+my code. <em>default</em> task (which is triggered when you run <em>gulp</em> without passing any task)
+builds the projects, starts the server and watches for file changes.
+This way I just type gulp and I’m ready to work on my project.
+Notice that <em>server:start</em> and <em>watch</em> tasks are executed in parallel because both are
+blocking.</p>
+
+<p>This is the build cycle for this type of projects. I do like to use <em>docker</em> to run my
+node apps so at the end of build I like to generate a docker image and put it on docker
+registry (this is where version comes handy.) My other post explains how to run
+node apps in docker:</p>
+
+<ul>
+  <li><a href="/2015/08/13/how-to-run-node-apps-in-docker.html">How To Run Node Apps In Docker</a></li>
+</ul>
+
+<p>Make sure to also check my other gulp files out:</p>
+
+<ul>
+  <li><a href="/2015/08/13/my-gulp-files.html">My Gulp Files</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-library.html">My Gulp Files: Library Projects</a></li>
+  <li><a href="/2015/08/13/my-gulp-files-ionic-app.html">My Gulp Files: Ionic App Projects</a></li>
+</ul>
+
+  </div>
+
+  <div class="call-actions">
+    <button class="btn btn-lg btn-default" onclick="window.drift.api.openChat()">
+      <em aria-hidden="true" class="fa fa-comment"></em>
+      Message me
+    </button>
+
+    <button class="btn btn-lg btn-default" onclick="showSubscribePopup()">
+      <em aria-hidden="true" class="mr1 fa fa-envelope fs3"></em>
+      Subscribe
+    </button>
+  </div>
+</article>
+
+        </main>
+      </div>
+
+      <div class="row">
+        <footer>
+  <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('2kiff4ruxwsv');
+</script>
+<!-- End of Async Drift Code -->
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">
+function showSubscribePopup() {
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"af42fcfb68a954d33541475b5","lid":"a273a67cf2"}) });
+  document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+</script>
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551b16eb4d31da19" async="async"></script>
+</footer>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
